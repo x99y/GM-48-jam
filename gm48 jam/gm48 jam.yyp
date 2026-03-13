@@ -20,6 +20,7 @@
   "name":"gm48 jam",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"example","path":"scripts/example/example.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
