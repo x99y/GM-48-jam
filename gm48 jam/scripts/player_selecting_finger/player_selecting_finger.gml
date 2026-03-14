@@ -96,6 +96,9 @@ function player_selecting_finger(args){
 				
 			}
 		
+			global.player_fingers[selected].glow = false
+			global.player_fingers[selected].glow_alpha = 0
+			global.player_fingers[selected].glow_phase = 1
 			return return_selection
 		}
 	}

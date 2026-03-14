@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__status_effect_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__status_effect_data",
+  "parent":{
+    "name":"databases",
+    "path":"folders/databases.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

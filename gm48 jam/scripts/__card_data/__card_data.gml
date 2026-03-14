@@ -17,10 +17,10 @@ function init_card_database(){
 		name : "Punch", //name
 		desc : "Hits d1 any un in front of you d1", 
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
-		selection_finger_number : 3, //one by default
+		selection_finger_number : 1, //one by default
 		
 		play_selection :	[
-								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],3,EFFECTS.DESTROY],
+								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
 								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.ALL],1,EFFECTS.DESTROY]
 							],
 		
@@ -35,7 +35,7 @@ function init_card_database(){
 		
 		variables: ["range=player.spd+2", "dex=3"], //Not required
 		
-		
+		play_selection :[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,"range"]],
 		
 		selection_finger_type : SELECTION_FINGER_TYPE.BIOLOGICAL,
 		selection_finger_number : 1, //one by default

@@ -20,9 +20,7 @@ function init_new_selection(){
 	switch(current_selection_type){
 		case SELECTION_TYPE.FINGER: 	
 			if !_active{
-				oHandRenderer.move_to(GUI_HAND_SHOWN_X,GUI_HAND_SHOWN_Y,15)
-				oHandRenderer.shake = true		
-			
+				show_flesh()
 			}
 			selection_script = player_selecting_finger
 			
@@ -32,8 +30,10 @@ function init_new_selection(){
 			}
 				
 		break
-		case SELECTION_TYPE.LANE: 
+		case SELECTION_TYPE.LANE:
+		
 			selection_script = player_selecting_lane
+			
 		break
 		
 	}

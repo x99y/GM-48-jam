@@ -20,13 +20,18 @@ repeat (4){
 	draw_card()	
 }	
 
-
-
 state = player_in_hand
 
 selected_card = noone
 
 sorted_list = ds_list_create()
+
+//Init stats via database
+init_player_stats_database()
+for(var i = 0; i < array_length(DATA_stats_keyword); i ++){
+	variable_instance_set(id,DATA_stats_keyword[i].var_name,1)
+}
+
 
 function switch_state(_state){
 	switch(_state){
@@ -64,6 +69,8 @@ function switch_state(_state){
 			
 			play_selection_requirement = [] 
 			array_copy(play_selection_requirement,0,_selection_array, 0, array_length(_selection_array))
+			
+			revert_info = -1
 			
 			revert_info = array_create(array_length(play_selection_requirement),-1)
 			selected_info = array_create(array_length(play_selection_requirement),-1)

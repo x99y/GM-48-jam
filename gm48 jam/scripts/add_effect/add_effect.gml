@@ -19,12 +19,41 @@ function add_effect_to_finger(_finger, _args){
 		break
 		
 		default:
-			if !struct_exists(_finger, _args[0]){
-				show_debug_message($"effect {_args[0]} is not in the finger")
+			
+			if !is_array(_args){
 				return false
 			}
-			array_push(revert_info[current_selection],_finger._args[0])
-			_finger._args[0] += _args[1]
+			
+			var _status_effect = _args[0]
+			
+			if STATUS_EFFECT.COUNT <= _status_effect{ return false}
+			
+			//Idk why im doing it this way but i am deal with it
+			var __effect_data = __status_effect_data()
+			
+			var _intensity = _args[1]
+			
+			if !safe_real(_intensity, false){
+				//find if we have this  -------------------------------------------------------------------------------------------------------------------
+				if struct_exists(selected_card, _intensity){
+					_intensity = struct_get(selected_card,_intensity)
+					if is_string(_intensity){
+						_intensity = string_to_formula(_intensity)
+					}
+					show_message(_intensity)
+				}
+			}
+			
+			
+			_finger.status_effects[_status_effect] += _intensity
+			
+			switch(__effect_data[_status_effect].status_effect_type){
+				
+				case EFFECTS.START_OF_TURN:  break	
+				case EFFECTS.INSTANT: break	
+				case EFFECTS.END_OF_TURN: break	
+			}
+			
 		break
 	}
 }

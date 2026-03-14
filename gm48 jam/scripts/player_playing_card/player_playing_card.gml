@@ -39,6 +39,7 @@ function player_playing_card(){
 			switch_state(player_on_board)
 			selected_card = noone
 			
+			hide_flesh()
 			
 		}
 		
@@ -48,11 +49,12 @@ function player_playing_card(){
 		
 		if current_selection <= 0{
 		
-			switch_state(player_on_board)
+			switch_state(player_in_hand)
 			draw_card(selected_card)
 			selected_card = noone
 			
 			//TODO hide anything showing
+			hide_flesh()
 			
 		}else{
 			
@@ -71,7 +73,19 @@ function player_playing_card(){
 						break	
 					}
 					
-					show_message($"selected: {selected_info[current_selection]} revert: {revert_info}")
+					while array_length(selected_info[current_selection]) > 0{
+						var _finger_to_restore = global.player_fingers[array_pop(selected_info[current_selection])]
+						var _value_to_restore = array_pop(revert_info[current_selection])
+						
+						if current_selection_args[2] < EFFECTS.END_OF_TURN{
+							_finger_to_restore.state =	_value_to_restore
+							
+							//will be changed
+							_finger_to_restore.image_index = 0
+						}
+						
+					}
+					
 					
 				break;
 			}
