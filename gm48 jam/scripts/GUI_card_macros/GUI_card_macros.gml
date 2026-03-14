@@ -17,6 +17,21 @@
 #macro GUI_DISPLAYED_CARD_WIDTH (GUI_DISPLAYED_CARD_HEIGHT*0.75)
 
 
+
+//hand positions
+#macro GUI_HAND_MARGIN_BOTTOM VIEW_HEIGHT*0.08
+#macro GUI_HAND_MARGIN_TOP 0
+#macro GUI_HAND_MARGIN_SIDE (VIEW_WIDTH - (GUI_CARD_WIDTH)*5.1)/2
+#macro GUI_HAND_MAX_WIDTH VIEW_WIDTH-GUI_HAND_MARGIN_SIDE*2
+
+#macro GUI_HAND_BORDER_TOP_Y VIEW_HEIGHT - (GUI_CARD_HEIGHT + GUI_HAND_MARGIN_BOTTOM + GUI_HAND_MARGIN_TOP)
+#macro GUI_HAND_BORDER_BOT_Y VIEW_HEIGHT - GUI_HAND_MARGIN_BOTTOM
+
+
+
+
+
+
 //in here we can change these vars to ensure text is where it should be
 // NOTE origin of the x and y is in the center of the card, so adjust locations for that
 #macro CARD_BORDER 6

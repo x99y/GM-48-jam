@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"card",
+  "%Name":"rearrange_card_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"card",
+  "name":"rearrange_card_functions",
   "parent":{
-    "name":"cards",
-    "path":"folders/cards.yy",
+    "name":"scripts",
+    "path":"folders/cards/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

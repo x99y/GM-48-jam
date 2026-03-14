@@ -1,13 +1,12 @@
-if mouse_check_button_pressed(mb_left){
-	current_card ++	
+
+draw_player_hand()
+
+
+//Draw selected card infront
+if oPlayerController.selected_card != noone{
+	var _cur_selected_card = oPlayerController.selected_card
+		
+	_cur_selected_card.draw();
+	_cur_selected_card.step()
 }
-
-if mouse_check_button_pressed(mb_right){
-	current_card --
-}
-
-current_card = clamp(current_card, 0, _length-1)
-
-draw_text(10,10,global.base_cards[current_card].card_object.desc_formated)
-
-draw_sprite(global.base_cards[current_card].sprite,0,500,500)
+	

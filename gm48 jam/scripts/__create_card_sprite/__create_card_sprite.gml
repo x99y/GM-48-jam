@@ -48,7 +48,7 @@ function __create_card_sprite(_card, _sprite_index = noone, _surface = -1){
 		
 
 		}
-		//C:\Users\jacke\AppData\Local\
+
 
 		surface_reset_target()
 	

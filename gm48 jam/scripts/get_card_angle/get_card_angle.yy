@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"card",
+  "%Name":"get_card_angle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"card",
+  "name":"get_card_angle",
   "parent":{
-    "name":"cards",
-    "path":"folders/cards.yy",
+    "name":"scripts",
+    "path":"folders/cards/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
