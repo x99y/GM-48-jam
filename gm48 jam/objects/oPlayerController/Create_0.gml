@@ -48,6 +48,8 @@ function switch_state(_state){
 			
 			oHandRenderer.move_to(GUI_HAND_SHOWN_X,GUI_HAND_SHOWN_Y,15)
 			oHandRenderer.shake = true
+			
+			selected = -1
 		break
 		
 		default: break;	

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_playing_card",
   "parent":{
-    "name":"states",
-    "path":"folders/player/states.yy",
+    "name":"card selection states",
+    "path":"folders/player/card selection states.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
