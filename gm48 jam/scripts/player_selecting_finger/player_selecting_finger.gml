@@ -69,6 +69,10 @@ function player_selecting_finger(args){
 			//If there is only one
 			if _number_to_select <= 1{
 				return_selection = selected
+		
+				global.player_fingers[selected].glow = false
+				global.player_fingers[selected].glow_alpha = 0
+				global.player_fingers[selected].glow_phase = 1
 			}else{
 				
 				//if we need to choose more than one
@@ -95,10 +99,7 @@ function player_selecting_finger(args){
 				
 				
 			}
-		
-			global.player_fingers[selected].glow = false
-			global.player_fingers[selected].glow_alpha = 0
-			global.player_fingers[selected].glow_phase = 1
+
 			return return_selection
 		}
 	}
