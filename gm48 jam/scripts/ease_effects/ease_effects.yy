@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ease_effects",
   "parent":{
-    "name":"gm48 jam",
-    "path":"gm48 jam.yyp",
+    "name":"core",
+    "path":"folders/core.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

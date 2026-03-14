@@ -9,8 +9,8 @@
   "name":"oCamera",
   "overriddenProperties":[],
   "parent":{
-    "name":"gm48 jam",
-    "path":"gm48 jam.yyp",
+    "name":"core",
+    "path":"folders/core.yy",
   },
   "parentObjectId":null,
   "persistent":false,

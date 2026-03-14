@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oSolid",
-  "eventList":[],
+  "%Name":"oBoardRenderer",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oSolid",
+  "name":"oBoardRenderer",
   "overriddenProperties":[],
   "parent":{
-    "name":"gm48 jam",
-    "path":"gm48 jam.yyp",
+    "name":"lane",
+    "path":"folders/lane.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sExample",
-    "path":"sprites/sExample/sExample.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

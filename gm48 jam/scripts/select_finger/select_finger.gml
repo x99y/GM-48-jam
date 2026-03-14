@@ -2,15 +2,19 @@ function select_finger(){
 	
 	var _mouse_y = device_mouse_y_to_gui(0)
 	var _mouse_x = device_mouse_x_to_gui(0)
+	
+	
 	with oHandRenderer{
 		if !point_in_rectangle(_mouse_x,_mouse_y,
 		x,y,
 		x + x_scale*base_width,y + y_scale*base_height
 		){
+			shake = false
 			return -1	
 		}
 	}
 
+	oHandRenderer.shake = true
 
 	var _finger_count = array_length(global.player_fingers)
 

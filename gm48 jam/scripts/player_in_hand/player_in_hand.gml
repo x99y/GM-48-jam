@@ -31,8 +31,7 @@ function player_in_hand(){
 						
 		if mouse_check_button_pressed(mb_left){
 				
-			//lock_cards()
-				
+
 			//Remove card from list
 			selected_card = _cur_card
 			ds_list_delete(global.hand, _card)		
@@ -46,15 +45,19 @@ function player_in_hand(){
 
 	
 	//if oBodyController.mouse_over(){
-//		switch_state(player_on_body_combat)	
-//		oHandRender.switch_state(cards_not_in_focus)
-//	}
-	/*
-	if keyboard_check_pressed(ord("D")) ||  (point_on_deck(_mouse_x,_mouse_y) and mouse_check_button_pressed(mb_left)){
-		oHandRender.switch_state(reveal_deck)
-		deck_pos = 0
+	//	switch_state(player_on_body_combat)	
+	//	oHandRender.switch_state(cards_not_in_focus)
+	//}
+	
+	if keyboard_check_pressed(ord("D")){ // (point_on_deck(_mouse_x,_mouse_y) and mouse_check_button_pressed(mb_left)){
+		
+		if ds_list_empty(global.current_deck){return}
+		
+		switch_state(player_viewing_deck)
+		
+		setup_deck_view()
 		deck_pos_to = 0
 		selected_card = noone
-		switch_state(displaying_deck)
-	}*/
+
+	}
 }

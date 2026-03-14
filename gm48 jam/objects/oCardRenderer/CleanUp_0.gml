@@ -1,0 +1,1 @@
+ds_list_destroy(sorted_list)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"show_flesh",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"show_flesh",
+  "parent":{
+    "name":"hand",
+    "path":"folders/hand.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

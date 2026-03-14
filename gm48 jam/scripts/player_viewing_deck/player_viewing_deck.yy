@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_viewing_deck",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_viewing_deck",
+  "parent":{
+    "name":"states",
+    "path":"folders/player/states.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
