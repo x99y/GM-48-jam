@@ -33,7 +33,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _draw_x = x + _xoffset;
 	    var _draw_y = y + _yoffset;
 
-	    draw_sprite_ext(sprite_index,image_index,_draw_x,_draw_y,xscale,yscale,0,c_white,image_alpha);
+	    draw_sprite_ext(sprite_index,oHandRenderer.sprite_frame,_draw_x,_draw_y,xscale,yscale,0,c_white,image_alpha);
 
         // Handle glow animation
         if (glow){

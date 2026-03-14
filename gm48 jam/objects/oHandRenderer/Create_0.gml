@@ -1,13 +1,28 @@
 randomize()
+image_speed = 0
+//assign sprites? feel free to clean this up if its messy. draw gui hates frames
+
+sprite_f1 = sFinger1Rise;
+sprite_f2 = sFinger2Rise;
+sprite_f3 = sFinger3Rise;
+sprite_f4 = sFinger4Rise;
+sprite_f5 = sFinger5Rise;
+sprite_hand = sHandHRise;
+
+sprite_frame = 0;
+sprite_number = 22;
 
 //init fingers
 global.player_fingers = array_create(5)
 
-global.player_fingers[0]= new finger(sFinger1,0,41) 
-global.player_fingers[1]= new finger(sFinger2,30,13) 
-global.player_fingers[2]= new finger(sFinger3,58,16) 
-global.player_fingers[3]= new finger(sFinger4,84,18) 
-global.player_fingers[4]= new finger(sFinger5,104,48) 
+global.player_fingers[0]= new finger(sprite_f1,0,0) 
+global.player_fingers[1]= new finger(sprite_f2,0,0) 
+global.player_fingers[2]= new finger(sprite_f3,0,0) 
+global.player_fingers[3]= new finger(sprite_f4,0,0) 
+global.player_fingers[4]= new finger(sprite_f5,0,0) 
+
+
+
 
 x = GUI_HAND_HIDDEN_X
 y = GUI_HAND_HIDDEN_Y
