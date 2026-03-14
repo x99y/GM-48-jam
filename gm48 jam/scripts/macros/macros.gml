@@ -11,3 +11,7 @@
 #macro CAMERA_MOVE_SPEED 0.2
 
 #macro CAMERA_LOCK_STRENGTH 0.5
+
+
+
+

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"card_marcos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"card_marcos",
+  "parent":{
+    "name":"cards",
+    "path":"folders/cards.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
