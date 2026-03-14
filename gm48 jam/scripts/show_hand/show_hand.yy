@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"show_hand",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"show_hand",
+  "parent":{
+    "name":"help",
+    "path":"folders/player/states/help.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

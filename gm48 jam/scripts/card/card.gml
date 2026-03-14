@@ -11,8 +11,10 @@ function card(_ID = 0) constructor{
 	
 	current_width = draw_width
 	current_height = draw_height
-
-
+	
+	xscale = 1
+	yscale = 1
+	
 	sprite_index = noone
 	image_index = 0
 	x = 0
@@ -44,9 +46,6 @@ function card(_ID = 0) constructor{
 				draw_height= GUI_DISPLAYED_CARD_HEIGHT			
 				
 				current_keyword_id = -1
-				
-				oHandRender.keyword_infobox.visible = false
-
 				
 				image_angle = 0 
 			break
@@ -167,8 +166,8 @@ function card(_ID = 0) constructor{
 		}
 		
 		
-		image_xscale = current_width/CARD_BASE_WIDTH
-		image_yscale = current_height/CARD_BASE_HEIGHT
+		image_xscale = current_width/((CARD_BASE_WIDTH)*(GUI_CARD_SPRITE_SCALE))
+		image_yscale = current_height/((CARD_BASE_HEIGHT)*(GUI_CARD_SPRITE_SCALE))
 	}	
 	
 	
@@ -181,7 +180,10 @@ function card(_ID = 0) constructor{
 	}	
 		
 	function draw(){
-		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale/GUI_CARD_SPRITE_SCALE,image_yscale/GUI_CARD_SPRITE_SCALE,angle,c_white,1)
+
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,angle,c_white,1)
+		
+		
 	}
 
 }

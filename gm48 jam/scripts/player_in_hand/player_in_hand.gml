@@ -1,5 +1,5 @@
 function player_in_hand(){
-	/*selected_card = noone
+	selected_card = noone
 
 	
 	var _mouse_y = device_mouse_y_to_gui(0)
@@ -7,12 +7,14 @@ function player_in_hand(){
 
 	if _mouse_y < GUI_HAND_BORDER_TOP_Y{
 		//if the cards are hidden, we are looking at the map
-		//switch_state(player_on_board)
-		show_debug_message("Not on cards!")
+		switch_state(player_on_board)
 	}
 	
 	
 	var hand_size = ds_list_size(global.hand)
+	
+	if hand_size <= 0{return }
+	
 	var sep = ((GUI_HAND_MAX_WIDTH) - ((GUI_CARD_WIDTH) * hand_size)) / hand_size
 	var _card = clamp((_mouse_x-GUI_HAND_MARGIN_SIDE) div ( GUI_CARD_WIDTH + sep),0,hand_size - 1)
 		
@@ -29,7 +31,7 @@ function player_in_hand(){
 						
 		if mouse_check_button_pressed(mb_left){
 				
-			lock_cards()
+			//lock_cards()
 				
 			//Remove card from list
 			selected_card = _cur_card
@@ -43,11 +45,11 @@ function player_in_hand(){
 		
 
 	
-	if oBodyController.mouse_over(){
-		switch_state(player_on_body_combat)	
-		oHandRender.switch_state(cards_not_in_focus)
-	}
-	
+	//if oBodyController.mouse_over(){
+//		switch_state(player_on_body_combat)	
+//		oHandRender.switch_state(cards_not_in_focus)
+//	}
+	/*
 	if keyboard_check_pressed(ord("D")) ||  (point_on_deck(_mouse_x,_mouse_y) and mouse_check_button_pressed(mb_left)){
 		oHandRender.switch_state(reveal_deck)
 		deck_pos = 0

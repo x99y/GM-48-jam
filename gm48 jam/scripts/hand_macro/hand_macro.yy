@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"hand_macro",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"hand_macro",
+  "parent":{
+    "name":"hand",
+    "path":"folders/hand.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

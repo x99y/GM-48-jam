@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_moving_camera",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_moving_camera",
+  "parent":{
+    "name":"states",
+    "path":"folders/player/states.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

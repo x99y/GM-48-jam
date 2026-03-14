@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"update_finger_pos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"update_finger_pos",
+  "parent":{
+    "name":"hand",
+    "path":"folders/hand.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"finger",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"finger",
+  "parent":{
+    "name":"hand",
+    "path":"folders/hand.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

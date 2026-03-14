@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"displaying_selected_card",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"displaying_selected_card",
+  "parent":{
+    "name":"states",
+    "path":"folders/player/states.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
