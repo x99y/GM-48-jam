@@ -38,7 +38,6 @@
   "resources":[
     {"id":{"name":"fntCard","path":"fonts/fntCard/fntCard.yy",},},
     {"id":{"name":"fntCardName","path":"fonts/fntCardName/fntCardName.yy",},},
-    {"id":{"name":"oBoardRenderer","path":"objects/oBoardRenderer/oBoardRenderer.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCard","path":"objects/oCard/oCard.yy",},},
     {"id":{"name":"oCardRenderer","path":"objects/oCardRenderer/oCardRenderer.yy",},},

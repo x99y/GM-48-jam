@@ -45,9 +45,9 @@ function player_in_hand(){
 
 	
 	//if oBodyController.mouse_over(){
-//		switch_state(player_on_body_combat)	
-//		oHandRender.switch_state(cards_not_in_focus)
-//	}
+	//	switch_state(player_on_body_combat)	
+	//	oHandRender.switch_state(cards_not_in_focus)
+	//}
 	
 	if keyboard_check_pressed(ord("D")){ // (point_on_deck(_mouse_x,_mouse_y) and mouse_check_button_pressed(mb_left)){
 		
