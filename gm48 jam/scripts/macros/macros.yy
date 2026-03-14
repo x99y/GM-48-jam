@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"example",
+  "%Name":"macros",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"example",
+  "name":"macros",
   "parent":{
     "name":"gm48 jam",
     "path":"gm48 jam.yyp",
