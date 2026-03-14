@@ -5,8 +5,9 @@ function init_card_database(){
 		desc : "Empty play description", 
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
 		selection_finger_number : 1, //one by default
+		selection_finger_effect : EFFECTS.DESTROY,
 		
-		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.ALL],1],
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
 		
 		lane_selection : LANE_SELECTION.SELF,
 		play_script : undefined, //play effect
@@ -16,11 +17,11 @@ function init_card_database(){
 		name : "Punch", //name
 		desc : "Hits d1 any un in front of you d1", 
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
-		selection_finger_number : 1, //one by default
+		selection_finger_number : 3, //one by default
 		
 		play_selection :	[
-								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.ALL],1],
-								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.ALL],1]
+								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],3,EFFECTS.DESTROY],
+								[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.ALL],1,EFFECTS.DESTROY]
 							],
 		
 		lane_selection : LANE_SELECTION.SELF,

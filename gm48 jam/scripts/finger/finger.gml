@@ -20,6 +20,9 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
     glow_alpha = 0
     glow_phase = 0
 	
+	state = FINGER_STATE.BIOLOGICAL
+	selected = false
+	
 	
 	function draw(_xoffset, _yoffset){
 	    var _draw_x = x + _xoffset;

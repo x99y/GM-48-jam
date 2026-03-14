@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"GUI_macros",
+  "%Name":"effects",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"GUI_macros",
+  "name":"effects",
   "parent":{
-    "name":"core",
-    "path":"folders/core.yy",
+    "name":"selection effects",
+    "path":"folders/selection scripts/selection effects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

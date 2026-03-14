@@ -1,0 +1,6 @@
+enum EFFECTS{
+	DESTROY,
+	BIO_HEAL,
+	MECH_HEAL,
+	DOT
+}

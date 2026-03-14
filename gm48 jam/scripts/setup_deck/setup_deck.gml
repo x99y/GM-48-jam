@@ -6,6 +6,7 @@ function setup_deck_view(){
 		deck_shown = true
 		deck_pos = 0
 		last_pos = 0
+		hide_hand()
 		
 		var deck_w = GUI_VIEW_DECK_WIDTH;
 		var deck_h = GUI_VIEW_DECK_HEIGHT;

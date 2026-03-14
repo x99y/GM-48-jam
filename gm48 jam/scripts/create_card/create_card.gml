@@ -53,13 +53,20 @@ function create_card(_ID = 0){
 					_number_of_fingers = _card_data.selection_finger_number
 				}
 				
+				var _selection_finger_effect = EFFECTS.DESTROY
+				
+				if struct_exists(_card_data, "selection_finger_effect"){
+					_selection_finger_effect = _card_data.selection_finger_effect
+				}
+				
 				//For drawing onto the card
 				//what can be selected
 				_card.base_finger_requirement = _selection_finger_type
+				
 				// how many need to be selected
 				_card.base_finger_amount = _number_of_fingers
 				
-				array_push(_selection_requirements, [SELECTION_TYPE.FINGER,_selection_finger_type,_number_of_fingers])
+				array_push(_selection_requirements, [SELECTION_TYPE.FINGER,_selection_finger_type,_number_of_fingers,_selection_finger_effect])
 
 			}else{
 				_card.base_finger_requirement = noone

@@ -8,11 +8,11 @@ function hide_deck(){
 		for (var i = 0; i < ds_list_size(sorted_list); i++)
 		{
 			var _card = sorted_list[|i]
-			_card.move_to(_card.x, _card.y+VIEW_HEIGHT*2, CARD_STATE.HIDDEN, 15);
+			_card.move_to(_card.x, VIEW_HEIGHT*1.5, CARD_STATE.HIDDEN, 15);
 			
 		}
 		
 
-		alarm[0] = 13
+		alarm[0] = 15
 	}
 }

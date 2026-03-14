@@ -52,10 +52,29 @@ function switch_state(_state){
 		case player_playing_card:
 			selected_card.move_to(0,0)
 			
-			oHandRenderer.move_to(GUI_HAND_SHOWN_X,GUI_HAND_SHOWN_Y,15)
-			oHandRenderer.shake = true
+			var _selection_array = selected_card.play_selection_requirement
 			
-			selected = -1
+			if _selection_array == noone{
+				//TODO play the card insantly
+				//temp
+				switch_state(player_on_board) //we can play the card instantly
+				
+				break
+			}
+			
+			play_selection_requirement = [] 
+			array_copy(play_selection_requirement,0,_selection_array, 0, array_length(_selection_array))
+			
+			revert_info = array_create(array_length(play_selection_requirement),-1)
+			selected_info = array_create(array_length(play_selection_requirement),-1)
+			
+			
+			current_selection = 0
+			init_new_selection()	
+			
+			
+			
+			
 		break
 		
 		case player_viewing_deck:

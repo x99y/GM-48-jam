@@ -73,9 +73,6 @@ function player_viewing_deck(){
 		}
 	}
 	
-	show_debug_message(selected_card)
-	
-	
 	if keyboard_check_pressed(ord("D") or keyboard_check_pressed(vk_escape)){
 		switch_state(player_on_board)
 		
