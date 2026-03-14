@@ -66,6 +66,7 @@ function player_playing_card(){
 
 			
 			switch(current_selection_type){
+				//Revert changes to fingers !
 				case SELECTION_TYPE.FINGER: 
 					//revert_info[current_selection])
 				
@@ -77,12 +78,17 @@ function player_playing_card(){
 						var _finger_to_restore = global.player_fingers[array_pop(selected_info[current_selection])]
 						var _value_to_restore = array_pop(revert_info[current_selection])
 						
-						if current_selection_args[2] < EFFECTS.END_OF_TURN{
+						if !is_array(current_selection_args[2]){
 							_finger_to_restore.state =	_value_to_restore
 							
 							//will be changed
 							_finger_to_restore.image_index = 0
-						}
+						}else{
+							//We are changing a status effect instead
+
+							var _status_effect = current_selection_args[2][0]						
+							_finger_to_restore.status_effects[_status_effect] = _value_to_restore
+						}	
 						
 					}
 					

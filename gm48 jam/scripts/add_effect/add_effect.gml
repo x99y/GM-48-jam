@@ -40,19 +40,13 @@ function add_effect_to_finger(_finger, _args){
 					if is_string(_intensity){
 						_intensity = string_to_formula(_intensity)
 					}
-					show_message(_intensity)
 				}
 			}
 			
+			array_push(revert_info[current_selection],_finger.status_effects[_status_effect])
+			
 			
 			_finger.status_effects[_status_effect] += _intensity
-			
-			switch(__effect_data[_status_effect].status_effect_type){
-				
-				case EFFECTS.START_OF_TURN:  break	
-				case EFFECTS.INSTANT: break	
-				case EFFECTS.END_OF_TURN: break	
-			}
 			
 		break
 	}
