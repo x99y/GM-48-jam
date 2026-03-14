@@ -3,8 +3,8 @@
 if (shake) {
 	  if (shake_timer >= 6) {
         shake_timer = 0
-        shake_dest_x = random_range(-2, 2);
-        shake_dest_y = random_range(-2, 2);
+        shake_dest_x = random_range(-2.5, 2.5);
+        shake_dest_y = random_range(-1, 1);
 		start_shake_x = shake_x
 		start_shake_y = shake_y
     }

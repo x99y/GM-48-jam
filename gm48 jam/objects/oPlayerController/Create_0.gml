@@ -6,6 +6,10 @@ clicked = false
 global.current_deck = ds_list_create()
 global.hand = ds_list_create()
 
+deck_pos = 0
+deck_pos_to = deck_pos
+last_pos = deck_pos
+time = 0
 
 //populate the deck
 repeat(15){
@@ -21,6 +25,8 @@ repeat (4){
 state = player_in_hand
 
 selected_card = noone
+
+sorted_list = ds_list_create()
 
 function switch_state(_state){
 	switch(_state){
@@ -52,9 +58,14 @@ function switch_state(_state){
 			selected = -1
 		break
 		
+		case player_viewing_deck:
+		break
+
+
 		default: break;	
 	}
 	
 	state = _state
 	
 }
+

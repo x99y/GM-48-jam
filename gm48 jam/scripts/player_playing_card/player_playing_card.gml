@@ -1,6 +1,8 @@
 
 function player_playing_card(){
 	
+	show_debug_message(select_lane())
+	
 	var _new_selected = select_finger()
 	
 	if selected != _new_selected{

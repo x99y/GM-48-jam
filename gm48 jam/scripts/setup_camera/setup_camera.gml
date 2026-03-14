@@ -1,39 +1,53 @@
-function setup_camera(){
-	
-	//Find common factor between the width and height and set the corresponding margins
-	var board_width = room_width
-	var board_height= room_height
-	var _board_margin_width =0
-	var _board_margin_top = 0
-	var _board_margin_bot = 0
+function setup_camera()
+{
+    var board_w = room_width;
+    var board_h = room_height;
 
+    // margins
+    var margin_w = GUI_MAP_MARGIN;
+    var margin_top = GUI_MAP_TOP_MARGIN;
+    var margin_bot = GUI_MAP_BOT_MARGIN;
 
-	var ratio = clamp(max((board_width *(1+_board_margin_width*2)) div CAMERA_WIDTH_RATIO,(board_height *(1+_board_margin_top+_board_margin_bot)) div CAMERA_HEIGHT_RATIO),CAMERA_SMALLEST_FACTOR,VIEW_SIZE_RATIO) + 1
+    var total_w = board_w + margin_w * 2;
+    var total_h = board_h + margin_top + margin_bot;
 
+    // required scale to fit board
+    var scale_w = total_w / CAMERA_WIDTH_RATIO;
+    var scale_h = total_h / CAMERA_HEIGHT_RATIO;
 
-	var cam_width = CAMERA_WIDTH_RATIO * ratio 
-	var cam_height = CAMERA_HEIGHT_RATIO * ratio
+    // smallest scale that fits everything
+    var ratio = ceil(max(scale_w, scale_h));
 
-	_board_margin_top *= cam_height
-	_board_margin_bot *= cam_height
+    ratio = clamp(ratio, CAMERA_SMALLEST_FACTOR, VIEW_SIZE_RATIO);
 
-	var _extra_width = max(0, cam_width - (board_width + _board_margin_width*2))
-	var _extra_height = max(0, cam_height - (board_height + _board_margin_bot+_board_margin_top))
+    var cam_w = CAMERA_WIDTH_RATIO * ratio;
+    var cam_h = CAMERA_HEIGHT_RATIO * ratio;
 
-	global.camera_margin_width = _extra_width / 2 + _board_margin_width 
-	global.camera_margin_height = _extra_height + (_board_margin_top)
+    // prevent camera exceeding room
+    cam_w = min(cam_w, room_width);
+    cam_h = min(cam_h, room_height);
 
-	camera_set_view_size(global.Camera,cam_width,cam_height)
-	global.camera_max_width = cam_width
-	global.camera_max_height = cam_height
-	
-	with oCamera{
-		target_width  =	global.camera_max_width
-		target_height = global.camera_max_height
-		
-		current_width =	global.camera_max_width
-		current_height= global.camera_max_height
-		
-	}
+    camera_set_view_size(global.Camera, cam_w, cam_h);
 
+    // calculate margins
+    var extra_w = cam_w - total_w;
+    var extra_h = cam_h - total_h;
+
+    global.camera_margin_width  = extra_w * 0.5 + margin_w;
+    global.camera_margin_height = extra_h + margin_top;
+
+    global.camera_max_width  = cam_w;
+    global.camera_max_height = cam_h;
+
+    with (oCamera)
+    {
+        target_width  = cam_w;
+        target_height = cam_h;
+
+        current_width  = cam_w;
+        current_height = cam_h;
+
+        x = x_to;
+        y = y_to;
+    }
 }

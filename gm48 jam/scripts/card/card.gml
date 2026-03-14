@@ -17,6 +17,7 @@ function card(_ID = 0) constructor{
 	
 	sprite_index = noone
 	image_index = 0
+	image_angle = 0
 	x = 0
 	y = 0
 	
@@ -63,8 +64,8 @@ function card(_ID = 0) constructor{
 				
 				xscale = 1
 				yscale = 1
-				draw_width = GUI_FULL_DECK_CARD_WIDTH
-				draw_height= GUI_FULL_DECK_CARD_HEIGHT	
+				draw_width = GUI_VIEW_DECK_CARD_WIDTH
+				draw_height= GUI_VIEW_DECK_CARD_HEIGHT	
 			break
 			case CARD_STATE.IN_HAND:
 				xscale = 1

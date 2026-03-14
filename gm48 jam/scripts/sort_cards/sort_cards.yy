@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sort_cards",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sort_cards",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/cards/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

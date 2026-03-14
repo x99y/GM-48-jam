@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oCardRenderer",
+  "%Name":"oBoardRenderer",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oCardRenderer",
+  "name":"oBoardRenderer",
   "overriddenProperties":[],
   "parent":{
-    "name":"cards",
-    "path":"folders/cards.yy",
+    "name":"lane",
+    "path":"folders/lane.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sTable",
+    "path":"sprites/sTable/sTable.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

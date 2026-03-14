@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"board_macros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"board_macros",
+  "parent":{
+    "name":"lane",
+    "path":"folders/lane.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
