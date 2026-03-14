@@ -5,7 +5,7 @@ function init_card_database(){
 		desc : "Empty play description", 
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
 		selection_finger_number : 1, //one by default
-		selection_finger_effect : EFFECTS.DESTROY,
+		selection_finger_effect : EFFECTS.DESTROY, //Destroy by default
 		
 		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
 		
