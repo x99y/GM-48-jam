@@ -9,3 +9,5 @@ shader_set(shPalette);
 	shader_set_uniform_f(shPalette_palette_ind, palette_ind);
 	var lay_id = layer_get_id("Tiles_1");
 shader_reset();
+
+if (palette_ind >= sprite_get_height(sPalettes)) palette_ind = 0;
