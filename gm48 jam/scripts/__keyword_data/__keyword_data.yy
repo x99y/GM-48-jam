@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_card",
+  "%Name":"__keyword_data",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_card",
+  "name":"__keyword_data",
   "parent":{
-    "name":"scripts",
-    "path":"folders/cards/scripts.yy",
+    "name":"databases",
+    "path":"folders/databases.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

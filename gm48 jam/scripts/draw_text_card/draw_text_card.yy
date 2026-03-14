@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_card",
+  "%Name":"draw_text_card",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_card",
+  "name":"draw_text_card",
   "parent":{
-    "name":"scripts",
-    "path":"folders/cards/scripts.yy",
+    "name":"sprite setup",
+    "path":"folders/cards/scripts/sprite setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

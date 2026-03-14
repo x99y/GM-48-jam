@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__card_data",
   "parent":{
-    "name":"cards",
-    "path":"folders/cards.yy",
+    "name":"databases",
+    "path":"folders/databases.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

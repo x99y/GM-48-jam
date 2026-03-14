@@ -1,0 +1,37 @@
+#macro CARD_BASE_WIDTH sprite_get_width(sCardBack)
+#macro CARD_BASE_HEIGHT sprite_get_height(sCardBack)
+
+
+
+//For the actual size for the GUI
+#macro GUI_CARD_HEIGHT (VIEW_HEIGHT/3)
+#macro GUI_CARD_WIDTH (GUI_CARD_HEIGHT*0.75)
+
+#macro GUI_CARD_SPRITE_SCALE 2
+
+#macro GUI_CARD_SPRITE_WIDTH GUI_CARD_WIDTH*GUI_CARD_SPRITE_SCALE
+#macro GUI_CARD_SPRITE_HEIGHT GUI_CARD_HEIGHT*GUI_CARD_SPRITE_SCALE
+
+//Might use later
+#macro GUI_DISPLAYED_CARD_HEIGHT (VIEW_HEIGHT*0.60)
+#macro GUI_DISPLAYED_CARD_WIDTH (GUI_DISPLAYED_CARD_HEIGHT*0.75)
+
+
+//in here we can change these vars to ensure text is where it should be
+// NOTE origin of the x and y is in the center of the card, so adjust locations for that
+#macro CARD_BORDER 6
+
+//Name location
+#macro CARD_NAME_MAX_PADDING 0
+#macro CARD_NAME_MAX_HEIGHT	25
+#macro CARD_NAME_MAX_WIDTH (CARD_BASE_WIDTH - CARD_BORDER * 2)
+#macro CARD_NAME_START_X (-CARD_BASE_WIDTH/2 + CARD_BORDER)
+#macro CARD_NAME_START_Y (-CARD_BASE_HEIGHT/2 + CARD_BORDER)
+
+
+//Description 
+#macro CARD_DESC_PADDING 4
+#macro CARD_DESC_MAX_HEIGHT (110 - (CARD_DESC_PADDING*2))
+#macro CARD_DESC_MAX_WIDTH (CARD_BASE_WIDTH - CARD_BORDER * 2 - CARD_DESC_PADDING*2)
+#macro CARD_DESC_START_X (CARD_DESC_PADDING + CARD_BORDER - CARD_BASE_WIDTH/2)
+#macro CARD_DESC_START_Y (14 + CARD_DESC_PADDING)

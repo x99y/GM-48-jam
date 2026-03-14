@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_card",
+  "%Name":"__sprite_refrences",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_card",
+  "name":"__sprite_refrences",
   "parent":{
-    "name":"scripts",
-    "path":"folders/cards/scripts.yy",
+    "name":"icons",
+    "path":"folders/cards/sprites/icons.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

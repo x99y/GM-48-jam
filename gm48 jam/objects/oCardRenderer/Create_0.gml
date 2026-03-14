@@ -1,4 +1,6 @@
 init_card_database()
+init_keyword_database()
+init_player_stats_database()
 
 //global.base_card_sprites;
 _length = array_length(card_data)

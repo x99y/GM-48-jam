@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_card",
+  "%Name":"__config_colours",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_card",
+  "name":"__config_colours",
   "parent":{
-    "name":"scripts",
-    "path":"folders/cards/scripts.yy",
+    "name":"sprite setup",
+    "path":"folders/cards/scripts/sprite setup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

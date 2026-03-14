@@ -14,7 +14,7 @@ function init_card_database(){
 	
 	card_data[1] = {
 		name : "Punch", //name
-		desc : "Hits any enemy in front of you", 
+		desc : "Hits d1 any un in front of you d1", 
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
 		selection_finger_number : 1, //one by default
 		
@@ -30,7 +30,7 @@ function init_card_database(){
 	
 	card_data[2] = {
 		name : "Feint", //name
-		desc : "Hits for {dex} and lets you move to any lane to the side", 
+		desc : "Hits for {range} and lets you move {dex} lane to the side", 
 		
 		variables: ["range=player.spd+2", "dex=3"], //Not required
 		

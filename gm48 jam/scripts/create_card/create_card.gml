@@ -144,15 +144,17 @@ function create_card(_ID = 0){
 			}	
 			
 			
-		
-			/*
-			//Card sprite creation
+			//Format the text
 			format_card_text(_card,_card_data)
 			
+			
+			//Card sprite creation
+
 			_card.name = _card_data.name
 			
 			//Create the card image
-			var _new_card =  create_card_sprite(_card)
+			var _new_card =  __create_card_sprite(_card)
+			
 			
 			var _sprite = _new_card.sprite
 		
@@ -162,11 +164,11 @@ function create_card(_ID = 0){
 			
 			if struct_exists(_new_card,"regions"){
 				_card.regions = _new_card.regions
-			}*/
+			}
 		
 			global.base_cards[_ID] = {
 				card_object : _card,
-				sprite : noone//_sprite
+				sprite : _sprite
 			}
 		
 		}

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_card",
+  "%Name":"GUI_card_macros",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_card",
+  "name":"GUI_card_macros",
   "parent":{
-    "name":"scripts",
-    "path":"folders/cards/scripts.yy",
+    "name":"cards",
+    "path":"folders/cards.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
