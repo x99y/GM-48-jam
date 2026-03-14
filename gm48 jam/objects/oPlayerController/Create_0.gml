@@ -13,7 +13,7 @@ time = 0
 
 //populate the deck
 repeat(15){
-	ds_list_add(global.current_deck, variable_clone(global.base_cards[irandom_range(1,2)].card_object))	
+	ds_list_add(global.current_deck, variable_clone(global.base_cards[irandom_range(1,array_length(global.base_cards)-1)].card_object))	
 }
 
 repeat (4){
