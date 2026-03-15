@@ -92,6 +92,8 @@ function player_playing_card(){
 						
 					}
 					
+					animate("idle")
+					
 					
 				break;
 			}

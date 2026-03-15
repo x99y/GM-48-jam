@@ -1,76 +1,56 @@
 
 function show_flesh(){
 	oHandRenderer.move_to(GUI_HAND_SHOWN_X,GUI_HAND_SHOWN_Y,15)
-	oHandRenderer.image_speed = 0.5
+	animate("rise")
+
 }
 
 
 function hide_flesh(){
 	oHandRenderer.move_to(GUI_HAND_HIDDEN_X,GUI_HAND_HIDDEN_Y,15)
 	oHandRenderer.shake = false
+	
+	animate("hide")
 }
 
-function animate(_damage, _position, _idle){
-//_damage is the hurt or dead state, _position is rise/fall
-//purpose is to detect end of animation loop and swap to next animation in cycle
-//_ damage 1 = hurt, 0 = dead; _position 1 = rise, 0 = fall
+function animate(_state){
 
-	//hurt
-	if _damage = 1
-	{
-		if _position = 1
-		{
-			sprite_f1 = sFinger1Rise;
-			sprite_f2 = sFinger2Rise;
-			sprite_f3 = sFinger3Rise;
-			sprite_f4 = sFinger4Rise;
-			sprite_f5 = sFinger5Rise;
-			sprite_hand = sHandHRise;
-		}
-		if _position = 0
-		{
-			sprite_f1 = sFinger1;
-			sprite_f2 = sFinger2;
-			sprite_f3 = sFinger3;
-			sprite_f4 = sFinger4;
-			sprite_f5 = sFinger5;
-			sprite_hand = sHand;
-		}
-	}
+	with oHandRenderer{
+		var _animation = __config_animation()
 	
-	//dead
-	if _damage = 0
-	{
-		if _position = 1
-		{
-			sprite_f1 = sFinger1;
-			sprite_f2 = sFinger2;
-			sprite_f3 = sFinger3;
-			sprite_f4 = sFinger4;
-			sprite_f5 = sFinger5;
-			sprite_hand = sHand;
+		if !struct_exists(_animation[0], _state){
+			show_debug_message("Animation state does not exist")
+			return false	
 		}
-		if _position = 0
-		{
-			sprite_f1 = sFinger1;
-			sprite_f2 = sFinger2;
-			sprite_f3 = sFinger3;
-			sprite_f4 = sFinger4;
-			sprite_f5 = sFinger5;
-			sprite_hand = sHand;
+	
+		sprite_hand = struct_get(_animation[5],_state)
+	
+		var _finger_count = array_length(global.player_fingers)
+	
+		for(var _i = 0; _i < _finger_count; _i ++){
+			
+			var _finger = global.player_fingers[_i]
+			if _finger.state != FINGER_STATE.DESTROYED{
+			
+				_finger.sprite_index = struct_get(_animation[_i],_state)
+				_finger.image_index = 0
+			
+			}else{
+				_finger.sprite_index = struct_get(_animation[_i],"dmg")
+				_finger.image_index = 1
+			}
+		
+			
 		}
+				
+		sprite_frame = 0
+		
+		if _state == "rise"{
+			image_speed = 0.5
+		}else{
+			image_speed = 0
+		}
+		
 	}
-
-	if (image_index >= image_number - 1)
-	{
-		sprite_f1 = sFinger1;
-		sprite_f2 = sFinger2;
-		sprite_f3 = sFinger3;
-		sprite_f4 = sFinger4;
-		sprite_f5 = sFinger5;
-		sprite_hand = sHand;
-		image_speed = 0
-	}
-	
-	
+		
 }

@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"sPalettes",
   "bboxMode":0,
-  "bbox_bottom":2,
+  "bbox_bottom":0,
   "bbox_left":0,
   "bbox_right":17,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":3,
+  "height":1,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"28809544-2e52-4aba-90a4-0d5de28b06a8","blendMode":0,"displayName":"default","isLocked":false,"name":"28809544-2e52-4aba-90a4-0d5de28b06a8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

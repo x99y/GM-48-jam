@@ -33,7 +33,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _draw_x = x + _xoffset;
 	    var _draw_y = y + _yoffset;
 
-	    draw_sprite_ext(sprite_index,oHandRenderer.sprite_frame,_draw_x,_draw_y,xscale,yscale,0,c_white,image_alpha);
+	    draw_sprite_ext(sprite_index,image_index,_draw_x,_draw_y,xscale,yscale,0,c_white,image_alpha);
 
         // Handle glow animation
         if (glow){
@@ -65,10 +65,8 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
             draw_set_alpha(1);
 			
         }
-    }
-
-
-	    /*/ draw_collision box
+		
+		/*/ draw_collision box
 	    draw_set_color(c_red);
 
 	    var _left   = sprite_get_bbox_left(sprite_index);
@@ -85,5 +83,10 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _y2 = _draw_y + (_bottom- _oy) * yscale;
 
 	    draw_rectangle(_x1, _y1, _x2, _y2, false);
-		/*/
+		*/
+		
+    }
+
+
+
 }

@@ -2,12 +2,14 @@ randomize()
 image_speed = 0
 //assign sprites? feel free to clean this up if its messy. draw gui hates frames
 
+depth = -999
+
 sprite_f1 = sFinger1Rise;
 sprite_f2 = sFinger2Rise;
 sprite_f3 = sFinger3Rise;
 sprite_f4 = sFinger4Rise;
 sprite_f5 = sFinger5Rise;
-sprite_hand = sHandHRise;
+sprite_hand = sHandRise;
 
 sprite_frame = 0;
 sprite_number = 22;
@@ -96,7 +98,6 @@ function move_to(_x,_y,_time_to = 30, _new_scale = noone){
 	}
 	
 }
-
 
 function mouse_over(){
 	var _mx = device_mouse_x_to_gui(0)
