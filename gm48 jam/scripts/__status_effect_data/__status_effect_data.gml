@@ -3,7 +3,8 @@ enum STATUS_EFFECT{
 	DECAY,
 	VIVIFICATION,
 	MECHANIZATION,
-	COUNT
+	COUNT,
+	DMG
 }
 
 function __status_effect_data(){

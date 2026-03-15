@@ -45,7 +45,46 @@ function add_effect_to_finger(_finger, _args){
 			
 			var _status_effect = _args[0]
 			
-			if STATUS_EFFECT.COUNT <= _status_effect{ return false}
+			if STATUS_EFFECT.COUNT <= _status_effect { 
+				
+				if _status_effect = STATUS_EFFECT.DMG{
+					var _dmg = get_string_number(_args[1])
+					
+					if !is_string(_dmg){
+						 array_push(oPlayerController.revert_info[oPlayerController.current_selection], _finger.hp)				
+						//Dmg delt
+						//cannot undo
+						_finger.hp -= _dmg
+						var _spawn = _finger.x_y_offset()
+
+						popup_handler.add_value(string(-_dmg),_spawn.x,_spawn.y,20)
+						
+						if _finger.hp <= 0{
+							_finger.hp = 0
+							
+							array_push(oPlayerController.revert_info[oPlayerController.current_selection], _finger.state)
+							
+							_finger.state = FINGER_STATE.DESTROYED
+							_finger.image_index = 1
+			
+							camera_shake(12,0.75)
+							var _sfx_break = audio_play_sound(sfx_break1, 1, false);
+							audio_sound_pitch(_sfx_break, random_range(0.8, 1.2));
+							var _spawn = _finger.x_y_offset()
+							popup_handler.add("DESTROYED", _spawn.x,_spawn.y,c_red,35)
+							
+							
+						}
+						
+						camera_shake(_dmg, 0.75)
+					}
+					return
+				}else{
+					return false
+				}
+			}
+			
+			
 			
 			//Idk why im doing it this way but i am deal with it
 			var __effect_data = __status_effect_data()
@@ -61,7 +100,8 @@ function add_effect_to_finger(_finger, _args){
 					}
 				}
 			}
-			 apply_status_to_finger(_finger, _status_effect, _intensity)
+			
+			apply_status_to_finger(_finger, _status_effect, _intensity)
 			
 		break
 	}

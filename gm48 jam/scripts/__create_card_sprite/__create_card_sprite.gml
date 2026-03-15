@@ -1,9 +1,7 @@
 function __create_card_sprite(_card, _sprite_index = noone, _surface = -1){
 	//Draw
 	with oCardRenderer{
-		
-		
-		
+				
 		if !surface_exists(_surface) _surface = surface_create(GUI_CARD_SPRITE_WIDTH, GUI_CARD_SPRITE_HEIGHT)
 
 		var _x = GUI_CARD_SPRITE_WIDTH/2
@@ -24,14 +22,22 @@ function __create_card_sprite(_card, _sprite_index = noone, _surface = -1){
 
 		var formated_desc = fit_text_to_box(play_desc,fntCard,CARD_DESC_MAX_WIDTH*x_scale,CARD_DESC_MAX_HEIGHT*y_scale)
 
+		var _type = irandom(1)
 	
 		surface_set_target(_surface)
 		{
 			draw_clear_alpha(c_black, 0)
 			//draw stuff here, remember 0,0 is the top left of the *surface*
 
-			draw_sprite_ext(sCardBack, 0, _x, _y, x_scale,y_scale, 0, c_white, 1)
-
+			draw_sprite_ext(sCardVariants, _type, _x, _y, x_scale,y_scale, 0, c_white, 1)
+			
+			var _icon ;
+			if _type = 0{
+				_icon = sIconArtMech
+			}else{
+				_icon = sIconArtOrg	
+			}
+			draw_sprite_ext(_icon, irandom(sprite_get_number(_icon)), _x, _y, x_scale,y_scale, 0, c_white, 1)
 			//draw_sprite_ext(Sprite27,0,_x,_y,1,1,0,c_white,1)
 
 			//Draw the cards text		

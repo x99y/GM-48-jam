@@ -1,4 +1,4 @@
-
+shader_set(shPalette) 
 draw_player_hand()
 
 if deck_shown {
@@ -14,4 +14,5 @@ if oPlayerController.selected_card != noone{
 	_cur_selected_card.step()
 }
 
+shader_reset() 
 

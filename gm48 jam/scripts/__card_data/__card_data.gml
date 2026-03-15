@@ -69,9 +69,9 @@ function init_card_database(){
 		variables: ["const=4-player.con"],
 		
 		// Needs damage + effect
-		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.NONE],
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DMG,"const"]],
 
-		play_script : [[player_draw_card],[player_draw_card]], //play effect
+		play_scripts : [[player_draw_card],[player_draw_card]], //play effect
 	}
 	
 	card_data[3] = {
@@ -79,7 +79,9 @@ function init_card_database(){
 		name : "Synthesis", //name
 		desc : "Damage a Bio finger 1, add Mechanization",
 		
-		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.MECHANIZATION,1]]
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DMG,1]],
+		
+		play_scripts : [[apply_status_to_selection,0, STATUS_EFFECT.MECHANIZATION, 1]]
 	}	
 
 	card_data[4] = {

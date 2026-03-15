@@ -114,11 +114,26 @@ function player_playing_card(){
 							
 							//will be changed
 							_finger_to_restore.image_index = 0
+							
 						}else{
 							//We are changing a status effect instead
 
-							var _status_effect = current_selection_args[2][0]						
-							_finger_to_restore.status_effects[_status_effect] = _value_to_restore
+							var _status_effect = current_selection_args[2][0]		
+							
+						    if _status_effect == STATUS_EFFECT.DMG {
+						        _finger_to_restore.hp = _value_to_restore
+						        if _finger_to_restore.hp <= 0 {
+						            _finger_to_restore.state       = FINGER_STATE.DESTROYED
+						            _finger_to_restore.image_index = 1
+						        } else {
+						            _finger_to_restore.state       = array_pop(revert_info[current_selection])
+						            _finger_to_restore.image_index = 0
+						        }
+						    } else {
+						        _finger_to_restore.status_effects[_status_effect] = _value_to_restore
+						    }					
+		
+							
 						}	
 						
 					}

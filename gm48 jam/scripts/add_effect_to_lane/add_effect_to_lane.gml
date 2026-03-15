@@ -95,7 +95,7 @@ function add_effect_to_lane(_lane, _args){
 		var _effect_type = _args[0]
 		
 		switch (_effect_type){
-			case LANE_EFFECTS.DMG:		
+			case LANE_EFFECTS.DMG:
 				// dmg type, dmg amount
 			    _target = global.lane[_lane]
 
