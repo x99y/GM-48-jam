@@ -58,13 +58,21 @@ function add_effect_to_finger(_finger, _args){
 				}
 			}
 			
+			
+			__status_effect_data()
 			array_push(revert_info[current_selection],_finger.status_effects[_status_effect])
 			
 			
-			_finger.status_effects[_status_effect] += _intensity
 			
+			_finger.status_effects[_status_effect] += _intensity
+		
+			var _sign = "-"
+			if _intensity > 0{
+				_sign = "+"
+			}
+		
 			var _spawn = _finger.x_y_offset()
-			popup_handler.add_value(_intensity, _spawn.x,_spawn.y,35)
+			popup_handler.add($"{_sign}{_intensity} {status_data[_status_effect].name}", _spawn.x,_spawn.y,35)
 			
 		break
 	}

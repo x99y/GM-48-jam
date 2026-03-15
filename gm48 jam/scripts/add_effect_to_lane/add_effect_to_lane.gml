@@ -3,6 +3,9 @@ function add_effect_to_lane(_lane, _args){
 
 	var _target
 //hard coded functions
+	var _effect_x= (get_lane_x(_lane) / room_width) * VIEW_WIDTH
+	var _effect_y =LANE_ENEMY_Y/room_height * VIEW_HEIGHT
+	
 	
 	switch (_args){
 		//Moving the player
@@ -112,6 +115,27 @@ function add_effect_to_lane(_lane, _args){
 			case LANE_EFFECTS.STATUS:	
 				// status effect, status amount
 				
+				
+			    _target = global.lane[_lane]
+
+			    if (_target == noone) {
+					attack_missed()
+				}else{
+					var _status_effect = _args[1]
+					var _intensity = get_string_number(_args[2])
+					__status_effect_data()	
+					_target.status_effects[_status_effect] += _intensity
+		
+					var _sign = "-"
+					if _intensity > 0{
+						_sign = "+"
+					}
+		
+					popup_handler.add($"{_sign}{_intensity} {status_data[_status_effect].name}", _effect_x,_effect_y,35)
+			
+				}
+				
+
 			break;
 		}
 		break

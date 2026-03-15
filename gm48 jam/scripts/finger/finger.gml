@@ -127,12 +127,12 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _stagger = 2;
 	    var _duration = 12;
 		
-		//var _pos = x_y_offset()
-		//var xx = _pos.x + 25
-		///var yy = _pos.y - 40
+		var _pos = x_y_offset()
+		var xx = _pos.x + 25
+		var yy = _pos.y - 40
 		
-		var xx = x + 100
-		var yy = y + 40
+		//var xx = x + 100
+		//var yy = y + 40
 		
 	    info_timer++;
     
@@ -191,10 +191,20 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
         
 	        var _offset_y = lerp(_slide_dist, 0, _progress);
 	        var _iy = yy - (_i * _line_height) + _offset_y;
-        
-	        draw_set_alpha(_progress);
-	        draw_set_color(_items[_i].col);
-	        draw_text(xx, _iy, _items[_i].label);
+	        var _label = _items[_i].label
+	        var _tw = string_width(_label)
+	        var _th = string_height(_label)
+	        var _pad = 4
+
+	        // Background box
+	        draw_set_alpha(_progress * 0.8)
+	        draw_set_color(c_black)
+	        draw_rectangle(xx - _pad, _iy - _pad, xx + _tw + _pad, _iy + _th + _pad, false)
+
+	        // Text
+	        draw_set_alpha(_progress)
+	        draw_set_color(_items[_i].col)
+	        draw_text(xx, _iy, _label)
 	    }
     
 	    draw_set_alpha(1);

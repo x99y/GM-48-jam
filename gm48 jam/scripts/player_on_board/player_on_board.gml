@@ -4,13 +4,18 @@ function player_on_board(){
 	var _lane = select_lane()
 	
 	if _lane != -1{ 
-		if current_info != _lane and global.lane[_lane] != noone {
+		if current_info != _lane{
+			if global.lane[_lane] != noone {
 		
-			var _ent = global.lane[_lane]
-			oBoardRenderer.info_entity = _ent
-			oBoardRenderer.info_timer = 0
+				var _ent = global.lane[_lane]
+				oBoardRenderer.info_entity = _ent
+				oBoardRenderer.info_timer = 0
 
-			current_info = _lane
+				current_info = _lane
+			}else{
+				current_info = -1	
+				oBoardRenderer.info_entity = noone	
+			}
 
 		}
 	}else{
