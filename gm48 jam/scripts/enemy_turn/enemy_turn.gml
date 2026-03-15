@@ -15,6 +15,12 @@ function next_turn(){
 		draw_card()
     }
 	
+	if ds_list_size(oBoardRenderer.enemy_list) = 0{
+		repeat(irandom_range(2,4)){
+			create_entity()
+		}
+	}
+
 	alarm[0] = 60
 	}
 }

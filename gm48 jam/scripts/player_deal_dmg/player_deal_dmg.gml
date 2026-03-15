@@ -1,4 +1,6 @@
 function player_deal_dmg(_entity, _type, _base_dmg, _casting_from = noone){
+	if _entity == noone || !is_struct(_entity) { return }
+	
 	var get_dmg;
 	switch _type{
 		case DMG_TYPE.CRUSH: 
@@ -45,6 +47,11 @@ function player_deal_dmg(_entity, _type, _base_dmg, _casting_from = noone){
 	} 
 
 
+	var _effect_x= (_entity.x/ room_width) * VIEW_WIDTH
+	var _effect_y =(_entity.y - 30)/room_height * VIEW_HEIGHT
+	
+	popup_handler.add(string(-get_dmg),_effect_x , _effect_y, c_red)
+	camera_shake(get_dmg, 0.75)
 
 	_entity.hp -= get_dmg
 	if _entity.hp <= 0 {
@@ -59,11 +66,7 @@ function player_deal_dmg(_entity, _type, _base_dmg, _casting_from = noone){
 	    delete _entity
 	}
 	
-	var _effect_x= (_entity.x/ room_width) * VIEW_WIDTH
-	var _effect_y =(_entity.y - 30)/room_height * VIEW_HEIGHT
-	
-	popup_handler.add(string(-get_dmg),_effect_x , _effect_y, c_red)
-	camera_shake(get_dmg, 0.75)
+
 	
 }
 

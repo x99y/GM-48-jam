@@ -6,7 +6,7 @@ __enemy_data()
 
 enemy_list = ds_list_create()
 
-repeat(irandom_range(1,3)){
+repeat(1){
 	create_entity()
 }
 
