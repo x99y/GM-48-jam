@@ -33,6 +33,7 @@ function animate(_state){
 			if _finger.state != FINGER_STATE.DESTROYED{
 			
 				_finger.sprite_index = struct_get(_animation[_i],_state)
+				
 				_finger.image_index = 0
 			
 			}else{

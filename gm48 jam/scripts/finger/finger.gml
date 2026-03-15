@@ -13,6 +13,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	yscale = 1
 	
 	image_alpha = 1
+	image_blend = c_white;
 	
 
 	//Glow animation
@@ -42,7 +43,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _draw_x = x + _xoffset;
 	    var _draw_y = y + _yoffset;
 
-		draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, c_white, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, image_blend, image_alpha);
 
 		// Handle glow animation
 		if (glow) {
