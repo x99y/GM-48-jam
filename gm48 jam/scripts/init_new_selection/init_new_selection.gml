@@ -34,6 +34,10 @@ function init_new_selection(){
 		
 			selection_script = player_selecting_lane
 			
+			if !_active{
+				hide_flesh()
+			}
+
 		break
 		
 	}

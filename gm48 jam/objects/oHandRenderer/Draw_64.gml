@@ -20,8 +20,6 @@ if (shake) {
 }
 
 
-
-
 draw_sprite_ext(sprite_hand,sprite_frame,x + shake_x,y+ shake_y,x_scale,y_scale,0,c_white,1)
 
 sprite_frame += image_speed;

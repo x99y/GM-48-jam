@@ -1,5 +1,5 @@
 function player_selecting_finger(args){
-	
+		
 	var _valid_type = args[0]
 	
 	var _can_select_bio = false

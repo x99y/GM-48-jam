@@ -33,6 +33,9 @@ function __config_colours()
 		c_destroy: (#70140b),
 		c_disable: (#691705),
 		
+		c_bio: (#a6ffe8),
+		c_mech: (#ffe8a6),
+		c_perfect: (#ffca8a)
 
 
     };

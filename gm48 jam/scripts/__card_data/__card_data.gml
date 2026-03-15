@@ -60,6 +60,8 @@ function init_card_database(){
 						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,"dex"]],	// NOTE you cannot change the ammount selected with them, working on it
 						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,2]]],
 		
+		lane_selection : [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1], //
+		
 		selection_finger_type : SELECTION_FINGER_TYPE.BIOLOGICAL,
 		selection_finger_number : 1, //one by default
 		lane_selection : LANE_SELECTION.SELF,
@@ -81,6 +83,18 @@ function init_card_database(){
 
 		
 		lane_selection : LANE_SELECTION.SELF,
+		play_script : undefined, //play effect
+	}
+	
+	card_data[4] = {
+		name : "move", //name
+		desc : "testing lane selection", 
+	
+		play_selection :[ 
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE]
+		], 
+
 		play_script : undefined, //play effect
 	}
 

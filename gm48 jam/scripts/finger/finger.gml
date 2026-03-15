@@ -1,4 +1,6 @@
 function finger(_sprite, _xoffset, _yoffset) constructor{
+	_colors = __config_colours()
+
 	sprite_index = _sprite
 	x = 0
 	y = 0
@@ -36,6 +38,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	
 	
 	function draw(_xoffset, _yoffset){
+
 	    var _draw_x = x + _xoffset;
 	    var _draw_y = y + _yoffset;
 
@@ -43,7 +46,6 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 
 		// Handle glow animation
 		if (glow) {
-		    var _colors = __config_colours()
 
 		    glow_timer += 1;
 		    if (glow_phase == 0) {
@@ -94,8 +96,6 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 		    gpu_set_blendmode(bm_normal);
 		    shader_set(_current_shader);
 		}
-		
-
 		/*/ Draw collision box
 		draw_set_color(c_red);
 		var _left   = sprite_get_bbox_left(sprite_index);
@@ -126,9 +126,10 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    var _slide_dist = 10;
 	    var _stagger = 8;
 	    var _duration = 20;
-
-		var xx = x+sprite_get_width(sprite_index)-50
-		var yy = y+90
+		
+		var _pos = x_y_offset()
+		var xx = _pos.x + 25
+		var yy = _pos.y - 40
 	
 	    info_timer++;
     
@@ -140,17 +141,44 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	    draw_set_font(fntData);
     
 	    var _line_height = string_height("HP: 0") + 4;
-    
-	    array_push(_items, { label: "HP: " + string(hp) + "/" + string(max_hp), col: c_green });
-    
-	    for (var _i = 0; _i < STATUS_EFFECT.COUNT; _i++) {
-	        if (status_effects[_i] > 0) {
-	            array_push(_items, {
-	                label: _status_data[_i].name + ": " + string(status_effects[_i]),
-	                col: _status_data[_i].color
-	            });
-	        }
-	    }
+	
+		
+		var _state_label = ""
+		var _state_col = c_white
+		var _status = true
+		switch(state){
+			case FINGER_STATE.BIOLOGICAL: 
+				_state_label = "BIOLOGICAL" 
+				_state_col = _colors.c_bio
+			break	
+			case FINGER_STATE.MECHANICAL: 
+				_state_label = "MECHANICAL" 
+				_state_col = _colors.c_mech 
+			break	
+			case FINGER_STATE.DESTROYED:  
+				_state_label = "DESTROYED" 
+				_state_col = _colors.c_destroy
+				_status = false
+			break	
+			
+			break
+		}
+		array_push(_items, { label: _state_label, col : _state_col})
+		
+		
+		if _status{
+		
+		    array_push(_items, { label: "HP: " + string(hp) + "/" + string(max_hp), col: c_green });
+	
+		    for (var _i = 0; _i < STATUS_EFFECT.COUNT; _i++) {
+		        if (status_effects[_i] > 0) {
+		            array_push(_items, {
+		                label: _status_data[_i].name + ": " + string(status_effects[_i]),
+		                col: _status_data[_i].color
+		            });
+		        }
+		    }
+		}
     
 	    var _total = array_length(_items);
     

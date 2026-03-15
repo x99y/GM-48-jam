@@ -78,9 +78,7 @@ function card(_ID = 0) constructor{
 				
 				image_angle = get_card_angle(x_dest)
 			break
-			//case CARD_STATE.PLAY:
-				//set_up_play_card(selection_count,selection_scripts)
-			//break			
+		
 			default:			
 				xscale = 1
 				yscale = 1
@@ -144,6 +142,13 @@ function card(_ID = 0) constructor{
 			break;
 			
 			case CARD_STATE.SHOWING_DECK:
+				time ++
+				y = float_height*sin(time*float_speed) + y_dest
+				image_angle = angle_height*sin(time*(angle_speed*flip))
+			break;
+			
+			case CARD_STATE.PLAY:
+			
 				time ++
 				y = float_height*sin(time*float_speed) + y_dest
 				image_angle = angle_height*sin(time*(angle_speed*flip))

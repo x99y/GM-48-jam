@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_empty_lanes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_empty_lanes",
+  "parent":{
+    "name":"lane",
+    "path":"folders/lane.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

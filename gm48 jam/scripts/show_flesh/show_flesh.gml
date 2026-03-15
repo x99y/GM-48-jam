@@ -22,7 +22,7 @@ function animate(_state){
 			show_debug_message("Animation state does not exist")
 			return false	
 		}
-	
+		
 		sprite_hand = struct_get(_animation[5],_state)
 	
 		var _finger_count = array_length(global.player_fingers)
@@ -40,7 +40,7 @@ function animate(_state){
 				_finger.image_index = 1
 			}
 		
-			
+			_finger.glow = false
 		}
 				
 		sprite_frame = 0

@@ -91,11 +91,6 @@ function create_card(_ID = 0){
 								var _current_var = _item[i]
 								
 								if is_string(_current_var){
-									
-									if (!struct_exists(_card, _current_var))
-									{
-									    struct_set(_card, _current_var, 1);
-									}
 								}
 							}
 						break

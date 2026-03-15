@@ -4,13 +4,13 @@ function player_playing_card(){
 	var _selection = script_execute(selection_script, current_selection_args)	
 
 	if _selection != undefined{
-		
-		
+		var _effect;
+		/////////////////////////////////////////////////////////////////////////////////////////////
 		//Preform actions based on what was picked
 		switch(current_selection_type){
 			case SELECTION_TYPE.FINGER: 
 			
-				var _effect = current_selection_args[2]
+				_effect = current_selection_args[2]
 			
 				if !is_array(_selection){
 					_selection = [_selection]	
@@ -22,6 +22,24 @@ function player_playing_card(){
 					
 					//Can change this if needed
 					script_execute(add_effect_to_finger, cur, _effect)
+				}
+				
+				
+			break;
+			
+			/////////////////////////////////////////////////////////////////////////////////////////////
+			case SELECTION_TYPE.LANE: 
+			
+				_effect = current_selection_args[2]
+			
+				if !is_array(_selection){
+					_selection = [_selection]	
+				}
+				
+				for(var i = 0; i < array_length(_selection); i ++){
+					var cur = _selection[i]
+					
+					script_execute(add_effect_to_lane, cur, LANE_EFFECTS.MOVE)
 				}
 				
 				
@@ -96,6 +114,12 @@ function player_playing_card(){
 					
 					
 				break;
+				
+				case SELECTION_TYPE.LANE:
+				
+					//<------------------------------------------------------------------
+				
+				break				
 			}
 			
 		}

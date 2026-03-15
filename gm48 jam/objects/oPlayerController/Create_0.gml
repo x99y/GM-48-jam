@@ -31,6 +31,11 @@ init_player_stats_database()
 for(var i = 0; i < array_length(DATA_stats_keyword); i ++){
 	variable_instance_set(id,DATA_stats_keyword[i].var_name,1)
 }
+//PLayer vars
+current_lane = 0
+move_player(0,15)
+
+
 
 
 function switch_state(_state){
@@ -55,7 +60,7 @@ function switch_state(_state){
 		break
 		
 		case player_playing_card:
-			selected_card.move_to(0,0)
+			selected_card.move_to(GUI_PLAY_CARD_X,GUI_PLAY_CARD_Y,CARD_STATE.PLAY,25)
 			
 			var _selection_array = selected_card.play_selection_requirement
 			

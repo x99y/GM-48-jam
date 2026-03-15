@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"add_effect",
+  "%Name":"__enemy_data",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"add_effect",
+  "name":"__enemy_data",
   "parent":{
-    "name":"selection effects",
-    "path":"folders/selection scripts/selection effects.yy",
+    "name":"entity sprites",
+    "path":"folders/lane/entity sprites.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

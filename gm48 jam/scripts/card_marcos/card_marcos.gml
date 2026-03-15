@@ -15,7 +15,7 @@ enum LANE_SELECTION{
 	SELF, //hit in front of player
 	ANY, //hit any lane
 	SIDE, //hit a lane in front of the player and one to the side
-	NOT_SELF_SIDE, //hit a lane in front of the player and one to the side
+	NOT_SELF_SIDE, //hit a lane to the side
 	NOT_SELF // any that are not in front of the player
 }
 
@@ -32,5 +32,5 @@ enum CARD_STATE{
 }
 
 #macro FINGER_SELECTION_ARRAY_LENGTH 4
-#macro LANE_SELECTION_ARRAY_LENGTH 3
+#macro LANE_SELECTION_ARRAY_LENGTH 4
 
