@@ -19,3 +19,5 @@ if moving{
 		moving = false	
 	}
 }
+
+time += 0.1;

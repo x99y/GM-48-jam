@@ -19,6 +19,9 @@ if (shake) {
 	shake_y = 0;
 }
 
+var _offset = sin(time) * amp;
+var _offsetrot = sin(time*0.5) * amp;
+draw_text_ext_transformed(40,20+_offset,"press enter to end turn",10,300,1.5,1.5,0+(_offsetrot*0.2))
 
 draw_sprite_ext(sprite_hand,sprite_frame,x + shake_x,y+ shake_y,x_scale,y_scale,0,c_white,1)
 

@@ -31,6 +31,11 @@
     {"$GMFolder":"","%Name":"lane","folderPath":"folders/lane.yy","name":"lane","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"effects","folderPath":"folders/lane/effects.yy","name":"effects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"entity sprites","folderPath":"folders/lane/entity sprites.yy","name":"entity sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
+<<<<<<< Updated upstream
+=======
+    {"$GMFolder":"","%Name":"entity","folderPath":"folders/lane/entity.yy","name":"entity","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"attacks","folderPath":"folders/lane/entity/attacks.yy","name":"attacks","resourceType":"GMFolder","resourceVersion":"2.0",},
+>>>>>>> Stashed changes
     {"$GMFolder":"","%Name":"player","folderPath":"folders/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"card selection states","folderPath":"folders/player/card selection states.yy","name":"card selection states","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"states","folderPath":"folders/player/states.yy","name":"states","resourceType":"GMFolder","resourceVersion":"2.0",},

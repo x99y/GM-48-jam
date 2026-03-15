@@ -14,6 +14,11 @@ sprite_hand = sHandRise;
 sprite_frame = 0;
 sprite_number = 22;
 
+//text
+text_y = 30
+amp = 3
+time = 0;
+
 //init fingers
 global.player_fingers = array_create(5)
 
