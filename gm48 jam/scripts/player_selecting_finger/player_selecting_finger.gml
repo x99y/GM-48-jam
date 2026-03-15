@@ -47,7 +47,7 @@ function player_selecting_finger(args){
 		if _new_selected != -1{
 				
 			var _cur = global.player_fingers[_new_selected]
-			show_debug_message(_cur)
+
 			if ((_can_select_bio and _cur.state = FINGER_STATE.BIOLOGICAL) or 
 				(_can_select_destroyed and _cur.state = FINGER_STATE.DESTROYED) or 
 				(_can_select_mech and _cur.state = FINGER_STATE.MECHANICAL)) and 
@@ -55,6 +55,7 @@ function player_selecting_finger(args){
 	
 	
 				_cur.glow = true;
+				
 			}else{
 				_new_selected = -1
 			}

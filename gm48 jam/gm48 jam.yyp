@@ -52,6 +52,7 @@
   "resources":[
     {"id":{"name":"fntCard","path":"fonts/fntCard/fntCard.yy",},},
     {"id":{"name":"fntCardName","path":"fonts/fntCardName/fntCardName.yy",},},
+    {"id":{"name":"fntData","path":"fonts/fntData/fntData.yy",},},
     {"id":{"name":"Credits","path":"notes/Credits/Credits.yy",},},
     {"id":{"name":"obj_palette","path":"objects/obj_palette/obj_palette.yy",},},
     {"id":{"name":"oBoardRenderer","path":"objects/oBoardRenderer/oBoardRenderer.yy",},},

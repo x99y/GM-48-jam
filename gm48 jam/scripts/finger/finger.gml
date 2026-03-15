@@ -23,10 +23,15 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	state = FINGER_STATE.BIOLOGICAL
 	selected = false
 	
-	status_effects = array_create(STATUS_EFFECT.COUNT)
+	status_effects = array_create(STATUS_EFFECT.COUNT,irandom_range(0,2))
 	
-	hp = 10
+	hp = 5
+	max_hp = hp
 	corruption = 0
+	
+	//info 
+	info_timer = 0;
+	info_duration = 20;
 	
 	
 	function draw(_xoffset, _yoffset){
@@ -67,6 +72,11 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 			gpu_set_blendmode(bm_normal);
 
 			shader_set(_current_shader);
+			
+			
+			draw_info()
+		}else{
+			info_timer = 0;	
 		}
 
 		/*/ Draw collision box
@@ -87,4 +97,52 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 
 
 
+	function draw_info() {
+	    var _slide_dist = 10;
+	    var _stagger = 8;
+	    var _duration = 20;
+
+		var xx = x+sprite_get_width(sprite_index)-50
+		var yy = y+90
+	
+	    info_timer++;
+    
+	    var _status_data = __status_effect_data();
+	    var _items = [];
+    
+	    var _cur_shader = shader_current();
+	    shader_reset();
+	    draw_set_font(fntData);
+    
+	    var _line_height = string_height("HP: 0") + 4;
+    
+	    array_push(_items, { label: "HP: " + string(hp) + "/" + string(max_hp), col: c_green });
+    
+	    for (var _i = 0; _i < STATUS_EFFECT.COUNT; _i++) {
+	        if (status_effects[_i] > 0) {
+	            array_push(_items, {
+	                label: _status_data[_i].name + ": " + string(status_effects[_i]),
+	                col: _status_data[_i].color
+	            });
+	        }
+	    }
+    
+	    var _total = array_length(_items);
+    
+	    for (var _i = 0; _i < _total; _i++) {
+	        var _t = clamp(info_timer - (_i * _stagger), 0, _duration);
+	        var _progress = ease_in_out(_t, 0, 1, _duration);
+        
+	        var _offset_y = lerp(_slide_dist, 0, _progress);
+	        var _iy = yy - (_i * _line_height) + _offset_y;
+        
+	        draw_set_alpha(_progress);
+	        draw_set_color(_items[_i].col);
+	        draw_text(xx, _iy, _items[_i].label);
+	    }
+    
+	    draw_set_alpha(1);
+	    draw_set_color(c_white);
+	    shader_set(_cur_shader);
+	}
 }
