@@ -72,6 +72,7 @@ function player_playing_card(){
 	}
 
 	if keyboard_check_pressed(vk_escape){
+		audio_play_sound(snd_exit,6,0,2)
 		
 		if current_selection <= 0{
 		

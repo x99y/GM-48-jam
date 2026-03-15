@@ -19,7 +19,7 @@ function __enemy_data(){
 	}
 	
 	DATA_enemy[2] = {
-		name : ["AX-Breaker Unit","BR-Sunder Frame", "MX-4 Breach Unit"],
+		name : ["AX-Breaker Unit","CL-Rescue Frame", "MX-4 Breach Unit"],
 		sprite : sEnemyMelee,
 		hp : 8,
 		str : 5,

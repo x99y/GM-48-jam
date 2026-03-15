@@ -22,4 +22,4 @@ var _h = sprite_get_height(sPlayer)
 var _px = round(_w * (1 + _breathe)) / _w
 var _py = round(_h * (1 - _breathe)) / _h
 
-draw_sprite_ext(sPlayer, 0, player_x, LANE_PLAYER_Y, _px, _py, 0, c_white, 1)
+draw_sprite_ext(sPlayer, 0, player_x, LANE_PLAYER_Y, _px*0.9, (_py+0.2)*0.9, 0, c_white, 1)

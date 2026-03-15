@@ -1,6 +1,9 @@
 selected_start_mousex = 0
 selected_start_mousey = 0
 
+aud_volume = 0;
+mus_inst = -1;
+
 clicked = false
 
 global.current_deck = ds_list_create()
