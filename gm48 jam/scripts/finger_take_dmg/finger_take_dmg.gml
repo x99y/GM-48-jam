@@ -13,6 +13,9 @@ function finger_take_dmg(_dmg) {
 			popup_handler.add_value(-_dmg,_gx,_gy)
 			
 			camera_shake(10,0.75)
+			var _sfx_break = audio_play_sound(sfx_break1, 1, false);
+			audio_sound_pitch(_sfx_break, random_range(0.8, 1.2));
+			
 			if  _pool[i].hp <=0{
 				_pool[i].hp = 0
 							
