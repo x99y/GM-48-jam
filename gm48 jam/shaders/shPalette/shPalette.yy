@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shPalette",
+  "name":"shPalette",
+  "parent":{
+    "name":"palette",
+    "path":"folders/palette.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
