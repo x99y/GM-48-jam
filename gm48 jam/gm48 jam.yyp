@@ -101,6 +101,7 @@
     {"id":{"name":"player_in_hand","path":"scripts/player_in_hand/player_in_hand.yy",},},
     {"id":{"name":"player_moving_camera","path":"scripts/player_moving_camera/player_moving_camera.yy",},},
     {"id":{"name":"player_on_board","path":"scripts/player_on_board/player_on_board.yy",},},
+    {"id":{"name":"player_on_flesh","path":"scripts/player_on_flesh/player_on_flesh.yy",},},
     {"id":{"name":"player_playing_card","path":"scripts/player_playing_card/player_playing_card.yy",},},
     {"id":{"name":"player_selecting_finger","path":"scripts/player_selecting_finger/player_selecting_finger.yy",},},
     {"id":{"name":"player_viewing_deck","path":"scripts/player_viewing_deck/player_viewing_deck.yy",},},

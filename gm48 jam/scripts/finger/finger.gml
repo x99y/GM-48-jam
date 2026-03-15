@@ -12,13 +12,14 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	
 	image_alpha = 1
 	
-	glow = false
-	
+
 	//Glow animation
 	glow_timer = 0
     glow_duration = 35
     glow_alpha = 0
     glow_phase = 0
+	glow = false
+	
 	
 	state = FINGER_STATE.BIOLOGICAL
 	selected = false

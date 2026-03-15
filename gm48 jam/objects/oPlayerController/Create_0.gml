@@ -86,7 +86,11 @@ function switch_state(_state){
 		
 		case player_viewing_deck:
 		break
-
+		
+		case player_on_flesh:
+			show_flesh()
+			selected = 0
+		break
 
 		default: break;	
 	}
