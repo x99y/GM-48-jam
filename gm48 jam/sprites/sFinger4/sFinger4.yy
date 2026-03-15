@@ -1,9 +1,9 @@
 {
   "$GMSprite":"v2",
   "%Name":"sFinger4",
-  "bboxMode":0,
-  "bbox_bottom":112,
-  "bbox_left":111,
+  "bboxMode":2,
+  "bbox_bottom":128,
+  "bbox_left":103,
   "bbox_right":147,
   "bbox_top":75,
   "collisionKind":1,

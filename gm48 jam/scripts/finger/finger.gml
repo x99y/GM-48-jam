@@ -44,7 +44,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 		// Handle glow animation
 		if (glow) {
 		    var _colors = __config_colours()
-    
+
 		    glow_timer += 1;
 		    if (glow_phase == 0) {
 		        glow_alpha = ease_in_out(glow_timer, 0, 1, glow_duration);
@@ -59,26 +59,42 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 		            glow_phase = 0;
 		        }
 		    }
+
+		    var _current_shader = shader_current();
+		    shader_reset();
     
-			var _current_shader = shader_current();
-			shader_reset();
-
-			// Draw coloured silhouette underneath so dark areas have something to glow from
-			draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha * 0.6);
-
-			// Then additive glow on top
-			gpu_set_blendmode(bm_add);
-			draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha);
-			draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha * 0.5);
-			gpu_set_blendmode(bm_normal);
-
-			shader_set(_current_shader);
-			
-			
-			draw_info()
-		}else{
-			info_timer = 0;	
+		    if (state == FINGER_STATE.DESTROYED) {
+				draw_sprite_ext(sprite_index, 0, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.3);
+				gpu_set_blendmode(bm_add);
+				draw_sprite_ext(sprite_index, 0, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.6 + sin(info_timer * 0.05) * 0.2);
+				draw_sprite_ext(sprite_index, 0, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.3);
+				gpu_set_blendmode(bm_normal);
+		    } else {
+		        draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha * 0.6);
+		        gpu_set_blendmode(bm_add);
+		        draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha);
+		        draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, _colors.c_surge, glow_alpha * 0.5);
+		        gpu_set_blendmode(bm_normal);
+		    }
+    
+		    shader_set(_current_shader);
+		    draw_info();
+		} else {
+		    info_timer = 0;
 		}
+		
+		//Handle select animation
+		if (selected) {
+		    var _current_shader = shader_current();
+		    shader_reset();
+		    draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.4 + sin(current_time * 0.005) * 0.1);
+		    gpu_set_blendmode(bm_add);
+		    draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.6 + sin(current_time * 0.005) * 0.1);
+		    draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, xscale, yscale, 0, c_white, 0.4);
+		    gpu_set_blendmode(bm_normal);
+		    shader_set(_current_shader);
+		}
+		
 
 		/*/ Draw collision box
 		draw_set_color(c_red);

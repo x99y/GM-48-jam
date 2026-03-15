@@ -5,11 +5,20 @@ function add_effect_to_finger(_finger, _args){
 		case EFFECTS.BIO_HEAL:
 			array_push(revert_info[current_selection],_finger.state)
 			_finger.state = FINGER_STATE.BIOLOGICAL
+			
+			var _spawn = _finger.x_y_offset()
+			popup_handler.add("FLESH RETURNED", _spawn.x,_spawn.y,c_green,35)
+			
+			
 		break
 
 		case EFFECTS.MECH_HEAL:
 			array_push(revert_info[current_selection],_finger.state)
 			_finger.state = FINGER_STATE.MECHANICAL
+			
+			var _spawn = _finger.x_y_offset()
+			popup_handler.add("METAL IS BORN", _spawn.x,_spawn.y,c_grey,35)
+			
 		break
 
 		case EFFECTS.DESTROY:
@@ -21,7 +30,7 @@ function add_effect_to_finger(_finger, _args){
 			var _sfx_break = audio_play_sound(sfx_break1, 1, false);
 			audio_sound_pitch(_sfx_break, random_range(0.8, 1.2));
 			var _spawn = _finger.x_y_offset()
-			popup_handler.add("DESTROYED", _spawn.x,_spawn.y,c_red,20)
+			popup_handler.add("DESTROYED", _spawn.x,_spawn.y,c_red,35)
 		break
 		
 		default:
@@ -53,6 +62,9 @@ function add_effect_to_finger(_finger, _args){
 			
 			
 			_finger.status_effects[_status_effect] += _intensity
+			
+			var _spawn = _finger.x_y_offset()
+			popup_handler.add_value(_intensity, _spawn.x,_spawn.y,35)
 			
 		break
 	}
