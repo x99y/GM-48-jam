@@ -17,5 +17,6 @@ enum LANE_EFFECTS{
 
 enum DMG_TYPE{
 	FIRE,
-	BLUNT
+	BLUNT,
+	CRUSH
 }

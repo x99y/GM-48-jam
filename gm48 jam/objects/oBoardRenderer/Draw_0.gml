@@ -12,4 +12,14 @@ if player_time <= player_time_to{
 	player_x = ease_in_out(player_time, player_startx, player_xto - player_startx,player_time_to)
 }
 
-draw_sprite_ext(sPlayer,0,player_x,LANE_PLAYER_Y,1,1,0,c_white,1)
+
+player_breathe_timer += player_breathe_speed
+var _breathe = sin(player_breathe_timer) * player_breathe_amount
+
+var _w = sprite_get_width(sPlayer)
+var _h = sprite_get_height(sPlayer)
+
+var _px = round(_w * (1 + _breathe)) / _w
+var _py = round(_h * (1 - _breathe)) / _h
+
+draw_sprite_ext(sPlayer, 0, player_x, LANE_PLAYER_Y, _px, _py, 0, c_white, 1)

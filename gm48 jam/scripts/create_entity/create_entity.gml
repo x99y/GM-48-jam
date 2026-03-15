@@ -30,7 +30,9 @@ function create_entity(){
 		global.lane[_spawn_lane] = new_enemy
 		
 		
-		new_enemy.x = get_lane_x(_spawn_lane)
+		
+		move_entity(new_enemy, _spawn_lane, 1)
+		//new_enemy.x = get_lane_x(_spawn_lane)
 		new_enemy.y = LANE_ENEMY_Y + random_range(10,-10)
 	}
 	

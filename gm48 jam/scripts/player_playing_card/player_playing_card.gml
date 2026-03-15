@@ -39,7 +39,7 @@ function player_playing_card(){
 				for(var i = 0; i < array_length(_selection); i ++){
 					var cur = _selection[i]
 					
-					script_execute(add_effect_to_lane, cur, LANE_EFFECTS.MOVE)
+					script_execute(add_effect_to_lane, cur, _effect)
 				}
 				
 				
@@ -75,12 +75,17 @@ function player_playing_card(){
 			hide_flesh()
 			
 		}else{
-			
+			//show_message(revert_info[current_selection - 1] == [])
+	        if revert_info[current_selection - 1] == -1 or revert_info[current_selection - 1][0] == -1{
 
+	            popup_handler.add_warning("Cannot UNDO past damage!", VIEW_WIDTH*0.35, VIEW_HEIGHT/2, c_white, 80)
+	            return
+	        }
 			//Revert all selections we did
 			current_selection --
 					
 			init_new_selection()
+			
 
 			
 			switch(current_selection_type){
@@ -115,12 +120,38 @@ function player_playing_card(){
 					
 				break;
 				
-				case SELECTION_TYPE.LANE:
-				
-					//<------------------------------------------------------------------
-				
-				break				
-			}
+            
+	            case SELECTION_TYPE.LANE:
+	                var _value_to_restore = array_pop(revert_info[current_selection])
+                
+	                switch(current_selection_args[2]){
+	                    case LANE_EFFECTS.MOVE:
+	                        move_player(_value_to_restore, 15)
+	                    break
+	                    case LANE_EFFECTS.SHOVE_LEFT:
+						show_message("huh")
+						    if is_array(_value_to_restore) {
+								//do nothing, we missed
+							}else{
+	                            var _target = global.lane[_value_to_restore - 1]
+	                            global.lane[_value_to_restore - 1] = noone
+	                            global.lane[_value_to_restore] = _target
+	                            _target.move_to_lane(_value_to_restore, 15)
+	                        }
+	                    break
+						case LANE_EFFECTS.SHOVE_RIGHT:
+						    if is_array(_value_to_restore) {
+						        // Do nothing, we missed
+						    } else {
+						        var _target = global.lane[_value_to_restore + 1]
+						        global.lane[_value_to_restore + 1] = noone
+						        global.lane[_value_to_restore] = _target
+						        _target.move_to_lane(_value_to_restore, 15)
+						    }
+						break
+	                }
+	            break           
+	        }
 			
 		}
 	}

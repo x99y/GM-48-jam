@@ -87,12 +87,34 @@ function init_card_database(){
 	}
 	
 	card_data[4] = {
-		name : "move", //name
+		name : "move right", //name
 		desc : "testing lane selection", 
-	
+		variables: ["dex=1"],
+		
+		
 		play_selection :[ 
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE]
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_RIGHT], // DONT DO MORE THAN 1 MOVE !
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE]
+		], 
+
+		play_script : undefined, //play effect
+	}
+	
+	card_data[5] = {
+		name : "move left", //name
+		desc : "testing lane selection", 
+		variables: ["dex=1"],
+		
+		
+		play_selection :[ 
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_LEFT], // DONT DO MORE THAN 1 MOVE !
+		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE]
 		], 
 
 		play_script : undefined, //play effect

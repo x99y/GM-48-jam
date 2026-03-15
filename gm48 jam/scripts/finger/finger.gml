@@ -138,7 +138,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
     
 	    var _cur_shader = shader_current();
 	    shader_reset();
-	    draw_set_font(fntData);
+	    draw_set_font(fntHandData);
     
 	    var _line_height = string_height("HP: 0") + 4;
 	

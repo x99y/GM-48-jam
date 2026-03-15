@@ -9,3 +9,11 @@ function move_player(lane, _time_to){
 	
 	oPlayerController.current_lane = lane
 }
+
+function move_entity(_entity, _lane, _time_to) {
+    _entity.x_to = get_lane_x(_lane)
+    _entity.move_time_to = _time_to
+    _entity.start_x = _entity.x
+    _entity.move_time = 0
+    _entity.lane = _lane
+}

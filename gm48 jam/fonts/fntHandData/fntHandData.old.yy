@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fntData",
+  "%Name":"fntHandData",
   "AntiAlias":0,
   "applyKerning":0,
   "ascender":39,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":51,
   "maintainGms1Font":false,
-  "name":"fntData",
+  "name":"fntHandData",
   "parent":{
     "name":"fonts",
     "path":"folders/cards/sprites/fonts.yy",
