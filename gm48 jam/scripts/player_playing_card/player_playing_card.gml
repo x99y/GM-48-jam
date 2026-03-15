@@ -48,12 +48,16 @@ function player_playing_card(){
 		}
 
 		selected_info[current_selection] = _selection
+		array_push(node_history, current_node)
+		current_node = current_node.next
 
-		if current_selection < array_length(play_selection_requirement)-1{
+		if current_node != noone {
 			current_selection ++
 			init_new_selection()	
 		}else{
 			//Finished playing the card ---------------------------------------------------------------------------
+			ds_list_add(global.discard, selected_card)
+			
 			switch_state(player_on_board)
 			selected_card = noone
 			
@@ -70,8 +74,6 @@ function player_playing_card(){
 			switch_state(player_in_hand)
 			draw_card(selected_card)
 			selected_card = noone
-			
-			//TODO hide anything showing
 			hide_flesh()
 			
 		}else{
@@ -82,7 +84,8 @@ function player_playing_card(){
 	            return
 	        }
 			//Revert all selections we did
-			current_selection --
+	        current_node = array_pop(node_history)
+	        current_selection--
 					
 			init_new_selection()
 			

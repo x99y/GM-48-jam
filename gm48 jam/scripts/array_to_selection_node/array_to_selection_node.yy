@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"array_to_selection_node",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_to_selection_node",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/cards/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,6 +5,8 @@ clicked = false
 
 global.current_deck = ds_list_create()
 global.hand = ds_list_create()
+global.discard = ds_list_create();
+
 
 deck_pos = 0
 deck_pos_to = deck_pos
@@ -73,20 +75,20 @@ function switch_state(_state){
 				break
 			}
 			
+			//setup
+			current_node = selected_card.play_selection_node
+			
+			
 			play_selection_requirement = [] 
 			array_copy(play_selection_requirement,0,_selection_array, 0, array_length(_selection_array))
 			
-			revert_info = -1
-			
-			revert_info = array_create(array_length(play_selection_requirement),-1)
-			selected_info = array_create(array_length(play_selection_requirement),-1)
-			
-			
+			revert_info = []
+			selected_info = []
 			current_selection = 0
+
+			node_history = []
+
 			init_new_selection()	
-			
-			
-			
 			
 		break
 		

@@ -23,7 +23,7 @@ function add_effect_to_lane(_lane, _args){
 
 		    if (_target == noone) {
 				//Miss, there is nothing to undo
-		        array_push(revert_info[current_selection], [])
+		       
 		        attack_missed(_lane)
 				
 		    } else {
@@ -58,7 +58,6 @@ function add_effect_to_lane(_lane, _args){
 			
 		    if (_target == noone) {
 		        // Miss, there is nothing to undo
-				array_push(revert_info[current_selection], [])
 				attack_missed(_lane)
 				
 		    } else {
@@ -106,6 +105,10 @@ function add_effect_to_lane(_lane, _args){
 					var _dmg = get_string_number(_args[2])
 					
 					if !is_string(_dmg){
+						
+						//Dmg delt
+						//cannot undo
+						array_push(revert_info[current_selection], -1)
 						player_deal_dmg(_target, _args[1], _dmg)
 					}
 				}
@@ -121,18 +124,13 @@ function add_effect_to_lane(_lane, _args){
 			    if (_target == noone) {
 					attack_missed()
 				}else{
+					
 					var _status_effect = _args[1]
 					var _intensity = get_string_number(_args[2])
-					__status_effect_data()	
-					_target.status_effects[_status_effect] += _intensity
-		
-					var _sign = "-"
-					if _intensity > 0{
-						_sign = "+"
-					}
-		
-					popup_handler.add($"{_sign}{_intensity} {status_data[_status_effect].name}", _effect_x,_effect_y,35)
-			
+					
+					array_push(revert_info[current_selection], -1)
+
+					player_apply_status(_target, _status_effect, _intensity)			
 				}
 				
 
@@ -164,6 +162,9 @@ function get_string_number(_formula){
 
 
 function attack_missed(_lane = 0){
+	
+	 array_push(revert_info[current_selection], [])
+	
 	var _effect_x= (get_lane_x(_lane) / room_width) * VIEW_WIDTH
 	var _effect_y =LANE_ENEMY_Y/room_height * VIEW_HEIGHT
 	

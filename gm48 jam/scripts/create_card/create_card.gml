@@ -108,7 +108,9 @@ function create_card(_ID = 0){
 							}
 							
 						break
-						default: return false
+						default: 
+							return true
+						break;
 					}
 					
 					
@@ -143,7 +145,12 @@ function create_card(_ID = 0){
 
 			if array_length(_selection_requirements) != 0 {
 				_card.play_selection_requirement = _selection_requirements
+			    _card.play_selection_node = array_to_selection_node(_selection_requirements)
 			}	
+			
+			if struct_exists(_card_data, "play_scripts"){
+				_card.play_scripts = _card_data.play_scripts
+			}
 			
 			
 			//Format the text
