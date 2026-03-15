@@ -8,20 +8,21 @@ function next_turn(){
     }
 	
     enemies_execute_intent()
-    enemies_declare_intent()
-	
-    // Draw new hand
-    repeat (4) {
-		draw_card()
-    }
 	
 	if ds_list_size(oBoardRenderer.enemy_list) = 0{
 		repeat(irandom_range(2,4)){
 			create_entity()
 		}
 	}
+	
+    enemies_declare_intent()
+	
+    // Draw new hand
+	draw_count = 0
+	
 
-	alarm[0] = 60
+
+	alarm[0] = 10
 	}
 }
 
