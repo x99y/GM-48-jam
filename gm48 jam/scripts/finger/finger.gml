@@ -26,7 +26,7 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 	state = FINGER_STATE.BIOLOGICAL
 	selected = false
 	
-	status_effects = array_create(STATUS_EFFECT.COUNT,irandom_range(0,2))
+	status_effects = array_create(STATUS_EFFECT.COUNT,0)
 	
 	hp = 5
 	max_hp = hp

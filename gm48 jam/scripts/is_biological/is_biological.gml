@@ -1,6 +1,6 @@
 
 
-function is_mechanical(_selection_to_check){
+function is_biological(_selection_to_check){
     var _fingers = oPlayerController.selected_info[_selection_to_check]
     
     if !is_array(_fingers) or array_length(_fingers) == 0{
@@ -14,7 +14,7 @@ function is_mechanical(_selection_to_check){
             return false
         }
         
-        if _finger.state != FINGER_STATE.MECHANICAL{
+        if _finger.state != FINGER_STATE.BIOLOGICAL{
             return false
         }
     }

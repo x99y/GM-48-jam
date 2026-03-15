@@ -1,4 +1,5 @@
 enum EFFECTS{
+	NONE,
 	DESTROY,
 	BIO_HEAL,
 	MECH_HEAL,

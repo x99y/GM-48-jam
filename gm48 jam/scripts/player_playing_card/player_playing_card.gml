@@ -56,6 +56,10 @@ function player_playing_card(){
 			init_new_selection()	
 		}else{
 			//Finished playing the card ---------------------------------------------------------------------------
+			//preform all final scripts
+			run_script_nodes(selected_card.play_script_node)
+			
+			
 			ds_list_add(global.discard, selected_card)
 			
 			switch_state(player_on_board)

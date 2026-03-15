@@ -29,7 +29,7 @@ function entity(ID) constructor {
     breathe_timer = 0
 	image_speed = 0.015
 	
-	status_effects = array_create(STATUS_EFFECT.COUNT,irandom_range(0,2))
+	status_effects = array_create(STATUS_EFFECT.COUNT,0)
 	
 
 	function move_and_back(_lane_to, _time_to, _bump_amount) {

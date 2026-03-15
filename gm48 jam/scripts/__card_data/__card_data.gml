@@ -39,95 +39,119 @@ function init_card_database(){
 		name : "Jawbreaker", //name
 		desc : "Hits {str} in front of you, applies {dec} decay to two fingers",
 		variables: ["str=player.str+2", "dec= 1"],
-
+		rarity : RARITY.COMMON,
 
 		play_selection : 
 			[
 			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,"dec"]],
-			[SELECTION_TYPE.CONDITIONAL,is_mechanical,0,
+			[SELECTION_TYPE.CONDITIONAL,is_biological,0,
 				[//yes it is
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]],
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.STATUS, STATUS_EFFECT.REGEN,2]],
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.STATUS, STATUS_EFFECT.REGEN,2]],
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.STATUS, STATUS_EFFECT.REGEN,2]]
+					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
 				],
 				[//no it isnt
 					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,1]]
 				]
 			],
-			]
+			],
+			
+		play_scripts : [
+			[SELECTION_TYPE.CONDITIONAL,is_biological,0,
+			[[player_draw_card],[player_draw_card]],
+			
+			[[player_draw_card]]]
+		]
 	}
 	
-	//MAKE SURE TO CHANGE THE ID !!!!!!!!!!!!!
+	
 	card_data[2] = {
-		name : "Feint", //name
-		desc : "Hits for {range} and lets you move {dex} lane to the side", 
-		//This is an example of using changing vars in the description, if you put the var in curly brakets it will look if there are varibles under the same name in the card
-		variables: ["range=player.spd+2", "dex=3"], //Not required
-		//You can set them like this. Player.spd is a player stat, you can see them all in __player_stats_data, CAPATALS MATTER!
+		name : "Paper Cut", //name
+		desc : "Damage a Bio finger {const} , to d1 * 2",
+		variables: ["const=4-player.con"],
 		
-		
-		play_selection :[[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],3,[STATUS_EFFECT.REGEN,"range"]], //These vars can also be passed into the selection
-						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,"dex"]],	// NOTE you cannot change the ammount selected with them, working on it
-						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,2]]],
-		
+		// Needs damage + effect
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.NONE],
 
-		selection_finger_type : SELECTION_FINGER_TYPE.BIOLOGICAL,
-		selection_finger_number : 1, //one by default
-		lane_selection : LANE_SELECTION.SELF,
-		play_script : undefined, //play effect
+		play_script : [[player_draw_card],[player_draw_card]], //play effect
 	}
-
+	
 	card_data[3] = {
-		name : "Destroy", //name
-		desc : "testing destroying yo shit", 
-	
-		play_selection :[
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.DESTROYED],1,EFFECTS.BIO_HEAL],
-		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.DESTROYED],1,EFFECTS.MECH_HEAL]
-		], //These vars can also be passed into the selection
-
+		//TODO ADD DMG -----------------------------------------------------------------------------------------------------------------------------------------
+		name : "Synthesis", //name
+		desc : "Damage a Bio finger 1, add Mechanization",
 		
-		lane_selection : LANE_SELECTION.SELF,
-		play_script : undefined, //play effect
-	}
-	
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.MECHANIZATION,1]]
+	}	
+
 	card_data[4] = {
-		name : "move right", //name
-		desc : "testing lane selection", 
-		variables: ["dex=1"],
+		name : "Cancerous Growth", //name
+		desc : "Add Regen 3 to a Bio finger, Decay 3 fingers 1 time",
 		
-		
-		play_selection :[ 
-		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF,1,LANE_EFFECTS.MOVE],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_RIGHT], // DONT DO MORE THAN 1 MOVE !
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE]
-		], 
+		play_selection :[
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,3]],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+		]
+	}
 
-		play_script : undefined, //play effect
+	card_data[5] = {
+		name : "Assimilation", //name
+		desc : "Destroyed a bio finger, create a mechanical finger",
+
+		play_selection :[
+						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.DESTROYED],1,EFFECTS.MECH_HEAL]
+						]
+	}	
+
+	card_data[6] = {
+		name : "Malignance", //name
+		desc : "Damage a Mech finger 1, add Vivifaction",
+		
+		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL],1,[STATUS_EFFECT.VIVIFICATION,1]]
+	}
+
+	card_data[7] = {
+		name : "Sidestep", //name
+		desc : "Move 1",
+		
+		play_selection :[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE], 
+
+	}
+
+	card_data[8] = {
+		name : "Shoulder Charge", //name
+		desc : "Move 1, Shove Right",
+		
+		play_selection :[
+		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,LANE_EFFECTS.SHOVE_RIGHT],
+		], 
+	}
+
+	card_data[9] = {
+		name : "Repair", //name
+		desc : "Heal a Mech finger, Decay and Mechanize a Bio", 
+		
+		play_selection :[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.NONE],
+		
+		play_scripts : [
+			[SELECTION_TYPE.CONDITIONAL,is_mechanical,0,
+			[[apply_status_to_selection,0, STATUS_EFFECT.REGEN, 2]],//yes it is
+			[[apply_status_to_selection,0, STATUS_EFFECT.DECAY, 2], [apply_status_to_selection,0, STATUS_EFFECT.MECHANIZATION, 2]]
+			]// no it isnt
+			] //play effect
+	}
+
+	card_data[10] = {
+		name : "Improvised Projectile", //name
+		desc : "Damage {lob} up to 3 away", 
+		variables: ["lob=player.dex"],
+		
+		play_selection : [SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+
 	}
 	
-	card_data[5] = {
-		name : "move left", //name
-		desc : "testing lane selection", 
-		variables: ["dex=1"],
-		
-		
-		play_selection :[ 
-		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_LEFT], // DONT DO MORE THAN 1 MOVE !
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.MOVE]
-		], 
-
-		play_script : undefined, //play effect
-	}
-
+}
+/*/
 }

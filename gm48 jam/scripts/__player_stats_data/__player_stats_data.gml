@@ -17,4 +17,10 @@ function init_player_stats_database(){
 			name : "Dexterity",
 			sprite :  "sDexIcon"
 	}
+	
+		DATA_stats_keyword[3] = {
+			var_name : "con",
+			name : "Constitution",
+			sprite :  "sSingleCardDrawKeyword"
+	}
 }

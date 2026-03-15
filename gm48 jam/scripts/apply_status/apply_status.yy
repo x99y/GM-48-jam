@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"array_to_selection_node",
+  "%Name":"apply_status",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"array_to_selection_node",
+  "name":"apply_status",
   "parent":{
-    "name":"nodes",
-    "path":"folders/cards/scripts/nodes.yy",
+    "name":"bonus scripts",
+    "path":"folders/selection scripts/bonus scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"array_to_selection_node",
+  "%Name":"apply_status_to_finger",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"array_to_selection_node",
+  "name":"apply_status_to_finger",
   "parent":{
-    "name":"nodes",
-    "path":"folders/cards/scripts/nodes.yy",
+    "name":"dmg",
+    "path":"folders/selection scripts/dmg.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

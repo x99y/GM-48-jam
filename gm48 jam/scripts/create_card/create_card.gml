@@ -149,7 +149,10 @@ function create_card(_ID = 0){
 			}	
 			
 			if struct_exists(_card_data, "play_scripts"){
-				_card.play_scripts = _card_data.play_scripts
+			    _card.play_scripts = _card_data.play_scripts
+			    _card.play_script_node = array_to_script_node(_card_data.play_scripts)
+			}else{
+			    _card.play_script_node = noone
 			}
 			
 			

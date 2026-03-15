@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"array_to_selection_node",
+  "%Name":"run_script_nodes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"array_to_selection_node",
+  "name":"run_script_nodes",
   "parent":{
     "name":"nodes",
     "path":"folders/cards/scripts/nodes.yy",
