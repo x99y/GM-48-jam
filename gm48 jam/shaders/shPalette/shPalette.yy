@@ -3,8 +3,8 @@
   "%Name":"shPalette",
   "name":"shPalette",
   "parent":{
-    "name":"palette",
-    "path":"folders/palette.yy",
+    "name":"Shaders",
+    "path":"folders/shader/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

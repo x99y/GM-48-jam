@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__config_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__config_animation",
+  "parent":{
+    "name":"hand",
+    "path":"folders/hand.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -16,6 +16,7 @@ function add_effect_to_finger(_finger, _args){
 			array_push(revert_info[current_selection],_finger.state)
 			_finger.state = FINGER_STATE.DESTROYED
 			_finger.image_index = 1
+			
 			camera_shake(12,0.75)
 			var _sfx_break = audio_play_sound(sfx_break1, 1, false);
 			audio_sound_pitch(_sfx_break, random_range(0.8, 1.2));

@@ -1,4 +1,4 @@
-
+shader_set(shPalette);
 
 if (shake) {
 	  if (shake_timer >= 6) {
@@ -19,13 +19,31 @@ if (shake) {
 	shake_y = 0;
 }
 
-draw_sprite_ext(sHand,0,x + shake_x,y+ shake_y,x_scale,y_scale,0,c_white,1)
 
+
+
+draw_sprite_ext(sprite_hand,sprite_frame,x + shake_x,y+ shake_y,x_scale,y_scale,0,c_white,1)
+
+sprite_frame += image_speed;
+
+//If we are entering
+if sprite_hand = sHandRise{
+	if (sprite_frame >= sprite_number - 1) 
+	{
+		animate("idle")
+	}
+}
 
 var _finger_count = array_length(global.player_fingers)
-		
 for(var _j = 0; _j < _finger_count; _j ++){
 	var _cur = global.player_fingers[_j];
-			
+	
+	if _cur.state != FINGER_STATE.DESTROYED{
+	
+		_cur.image_index = sprite_frame
+	
+	}
 	_cur.draw(shake_x,shake_y)
 }
+
+shader_reset();

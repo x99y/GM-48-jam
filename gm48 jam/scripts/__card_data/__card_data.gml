@@ -65,4 +65,21 @@ function init_card_database(){
 		lane_selection : LANE_SELECTION.SELF,
 		play_script : undefined, //play effect
 	}
+
+	card_data[3] = {
+		name : "Destroy", //name
+		desc : "testing destroying yo shit", 
+	
+		play_selection :[
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+		[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY]
+		], //These vars can also be passed into the selection
+
+		
+		lane_selection : LANE_SELECTION.SELF,
+		play_script : undefined, //play effect
+	}
+
 }
