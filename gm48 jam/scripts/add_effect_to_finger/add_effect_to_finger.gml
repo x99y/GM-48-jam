@@ -9,6 +9,7 @@ function add_effect_to_finger(_finger, _args){
 		case EFFECTS.BIO_HEAL:
 			array_push(revert_info[current_selection],_finger.state)
 			_finger.state = FINGER_STATE.BIOLOGICAL
+			audio_play_sound(snd_gone,6,0,3)
 			
 			var _spawn = _finger.x_y_offset()
 			popup_handler.add("FLESH RETURNED", _spawn.x,_spawn.y,c_green,35)
@@ -19,6 +20,8 @@ function add_effect_to_finger(_finger, _args){
 		case EFFECTS.MECH_HEAL:
 			array_push(revert_info[current_selection],_finger.state)
 			_finger.state = FINGER_STATE.MECHANICAL
+			_finger.image_blend = c_black;
+			audio_play_sound(snd_enemykill,6,0)
 			
 			var _spawn = _finger.x_y_offset()
 			popup_handler.add("METAL IS BORN", _spawn.x,_spawn.y,c_grey,35)
