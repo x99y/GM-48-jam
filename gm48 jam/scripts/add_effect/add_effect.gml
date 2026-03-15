@@ -20,6 +20,8 @@ function add_effect_to_finger(_finger, _args){
 			camera_shake(12,0.75)
 			var _sfx_break = audio_play_sound(sfx_break1, 1, false);
 			audio_sound_pitch(_sfx_break, random_range(0.8, 1.2));
+			var _spawn = _finger.x_y_offset()
+			popup_handler.add("DESTROYED", _spawn.x,_spawn.y,c_red,20)
 		break
 		
 		default:
@@ -52,28 +54,6 @@ function add_effect_to_finger(_finger, _args){
 			
 			_finger.status_effects[_status_effect] += _intensity
 			
-		break
-	}
-}
-
-/*
-function restore_effect_to_finger(_finger, _args){
-	switch (type){
-		case EFFECTS.HEAL:
-		
-		break
-		
-		case EFFECTS.DESTROY:
-			
-		break
-		
-		default:
-			if !struct_exists(_finger, _args[0]){
-				show_debug_message($"effect {_args[0]} is not in the finger")
-				return false	
-			}
-			
-			_finger._args[0] -= _args[1]
 		break
 	}
 }

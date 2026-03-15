@@ -2,7 +2,7 @@ randomize()
 image_speed = 0
 //assign sprites? feel free to clean this up if its messy. draw gui hates frames
 
-depth = -999
+depth = -80
 
 sprite_f1 = sFinger1Rise;
 sprite_f2 = sFinger2Rise;

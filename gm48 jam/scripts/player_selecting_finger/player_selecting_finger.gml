@@ -26,9 +26,7 @@ function player_selecting_finger(args){
 		}
 	}
 	
-	////--------------------------------------------------------------------------------------------------------------------------
-	//show_debug_message([_can_select_bio,_can_select_mech,_can_select_destroyed])
-	
+
 	var _number_to_select = args[1]
 
 	var _new_selected = select_finger()

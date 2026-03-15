@@ -96,6 +96,14 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 		//*/
     }
 
+	function x_y_offset(){
+		var _ox = sprite_get_xoffset(sprite_index);
+		var _oy = sprite_get_yoffset(sprite_index);
+		return {
+		    x : x + (sprite_get_bbox_left(sprite_index) - _ox) * xscale,
+			y : y + (sprite_get_bbox_top(sprite_index)  - _oy) * yscale
+		}
+	}
 
 
 	function draw_info() {
