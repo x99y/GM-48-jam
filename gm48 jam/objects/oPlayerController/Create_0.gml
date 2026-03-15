@@ -43,6 +43,7 @@ function switch_state(_state){
 		
 		case player_on_board:
 			hide_hand()
+			current_info = -1
 		break
 		
 		case player_in_hand:

@@ -87,6 +87,7 @@
     {"id":{"name":"card","path":"scripts/card/card.yy",},},
     {"id":{"name":"create_card","path":"scripts/create_card/create_card.yy",},},
     {"id":{"name":"create_entity","path":"scripts/create_entity/create_entity.yy",},},
+    {"id":{"name":"deal_blunt_dmg","path":"scripts/deal_blunt_dmg/deal_blunt_dmg.yy",},},
     {"id":{"name":"deal_crush_dmg","path":"scripts/deal_crush_dmg/deal_crush_dmg.yy",},},
     {"id":{"name":"displaying_selected_card","path":"scripts/displaying_selected_card/displaying_selected_card.yy",},},
     {"id":{"name":"dragging_card","path":"scripts/dragging_card/dragging_card.yy",},},

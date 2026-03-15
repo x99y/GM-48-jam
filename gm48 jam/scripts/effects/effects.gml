@@ -17,6 +17,14 @@ enum LANE_EFFECTS{
 
 enum DMG_TYPE{
 	FIRE,
+	SLASH,
 	BLUNT,
+	EXPLOSION,
 	CRUSH
+}
+
+enum RARITY{
+	COMMON,
+	UNCOMMON,
+	RARE
 }

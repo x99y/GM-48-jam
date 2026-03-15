@@ -124,13 +124,16 @@ function finger(_sprite, _xoffset, _yoffset) constructor{
 
 	function draw_info() {
 	    var _slide_dist = 10;
-	    var _stagger = 8;
-	    var _duration = 20;
+	    var _stagger = 2;
+	    var _duration = 12;
 		
-		var _pos = x_y_offset()
-		var xx = _pos.x + 25
-		var yy = _pos.y - 40
-	
+		//var _pos = x_y_offset()
+		//var xx = _pos.x + 25
+		///var yy = _pos.y - 40
+		
+		var xx = x + 100
+		var yy = y + 40
+		
 	    info_timer++;
     
 	    var _status_data = __status_effect_data();

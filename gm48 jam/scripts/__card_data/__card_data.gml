@@ -2,7 +2,8 @@ function init_card_database(){
 	//not a good method of storing data but i cant be bothered using .json since idk how gamemaker handles it
 	card_data[0] = {
 		name : "Empty card_data", //name
-		desc : "Empty play description", 
+		desc : "Empty play description",
+		rarity : RARITY.COMMON,
 		selection_finger_type : SELECTION_FINGER_TYPE.ALL, //not all by default
 		selection_finger_number : 1, //one by default
 		selection_finger_effect : EFFECTS.DESTROY, //Destroy by default
@@ -35,16 +36,16 @@ function init_card_database(){
 	}
 	
 	card_data[1] = {
-		name : "Punch", //name
-		desc : "Hits d1 any un in front of you d1", //Sometimes i use keywords in the text, these add images or words depending on what i want. D1 is draw one for example. the full list can be seen in __keyword_data
-		selection_finger_type : SELECTION_FINGER_TYPE.ALL,
-		selection_finger_number : 1, //one by default
-		
-		play_selection : [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],3,EFFECTS.DESTROY],
+		name : "Jawbreaker", //name
+		desc : "Hits {str} in front of you, applies {dec} decay to two fingers",
+		variables: ["str=player.str+2", "dec= 1"],
 
-		
-		lane_selection : LANE_SELECTION.SELF,
-		play_script : undefined, //play effect
+
+		play_selection : 
+			[
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],2,[STATUS_EFFECT.DECAY,"dec"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
+			]
 	}
 	
 	//MAKE SURE TO CHANGE THE ID !!!!!!!!!!!!!
@@ -60,8 +61,7 @@ function init_card_database(){
 						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,"dex"]],	// NOTE you cannot change the ammount selected with them, working on it
 						[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.REGEN,2]]],
 		
-		lane_selection : [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1], //
-		
+
 		selection_finger_type : SELECTION_FINGER_TYPE.BIOLOGICAL,
 		selection_finger_number : 1, //one by default
 		lane_selection : LANE_SELECTION.SELF,
@@ -93,7 +93,7 @@ function init_card_database(){
 		
 		
 		play_selection :[ 
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF,1,LANE_EFFECTS.MOVE],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_RIGHT],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_RIGHT], // DONT DO MORE THAN 1 MOVE !
@@ -110,7 +110,7 @@ function init_card_database(){
 		
 		
 		play_selection :[ 
-		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
+		[SELECTION_TYPE.LANE,LANE_SELECTION.NOT_SELF_SIDE,1,LANE_EFFECTS.MOVE],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,LANE_EFFECTS.SHOVE_LEFT],
 		[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,"dex",LANE_EFFECTS.SHOVE_LEFT], // DONT DO MORE THAN 1 MOVE !

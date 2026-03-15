@@ -28,6 +28,9 @@ function entity(ID) constructor {
     breathe_amount = random_range(0.038,0.041)
     breathe_timer = 0
 	image_speed = 0.015
+	
+	status_effects = array_create(STATUS_EFFECT.COUNT,irandom_range(0,2))
+	
 
 	function move_and_back(_lane_to, _time_to, _bump_amount) {
 	    var _origin_x = x

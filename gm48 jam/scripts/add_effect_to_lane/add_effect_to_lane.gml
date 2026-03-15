@@ -1,8 +1,6 @@
 function add_effect_to_lane(_lane, _args){
 	
-	var _effect_x= (get_lane_x(_lane) / room_width) * VIEW_WIDTH
-	var _effect_y =LANE_ENEMY_Y/room_height * VIEW_HEIGHT
-	
+
 	var _target
 //hard coded functions
 	
@@ -23,7 +21,8 @@ function add_effect_to_lane(_lane, _args){
 		    if (_target == noone) {
 				//Miss, there is nothing to undo
 		        array_push(revert_info[current_selection], [])
-		        popup_handler.add("Wiff!", _effect_x, _effect_y, c_white, 35)
+		        attack_missed(_lane)
+				
 		    } else {
 		        var _lane_left = _lane - 1
 		        if (_lane_left < 0 or global.lane[_lane_left] != noone) {
@@ -36,8 +35,6 @@ function add_effect_to_lane(_lane, _args){
 		            popup_handler.add("Crunch", _effect_x, _effect_y, c_white, 35)
 		            _target.move_and_back(_lane_left, 4, 0.4)
 		            
-					camera_shake(6, 0.75)
-					
 		            player_deal_dmg(_target, DMG_TYPE.CRUSH, 4)
 		            if _lane_left >= 0 {
 		                player_deal_dmg(global.lane[_lane_left], DMG_TYPE.CRUSH, 4)
@@ -58,8 +55,9 @@ function add_effect_to_lane(_lane, _args){
 			
 		    if (_target == noone) {
 		        // Miss, there is nothing to undo
-		        array_push(revert_info[current_selection], [])
-		        popup_handler.add("Wiff!", _effect_x, _effect_y, c_white, 35)
+				array_push(revert_info[current_selection], [])
+				attack_missed(_lane)
+				
 		    } else {
 		        var _lane_right = _lane + 1
 		        if (_lane_right >= 4 or global.lane[_lane_right] != noone) {
@@ -69,9 +67,7 @@ function add_effect_to_lane(_lane, _args){
             
 		            popup_handler.add("Crunch", _effect_x, _effect_y, c_white, 35)
 		            _target.move_and_back(_lane_right, 4, 0.4)
-            
-		            camera_shake(6, 0.75)
-            
+                        
 		            player_deal_dmg(_target, DMG_TYPE.CRUSH, 4)
 		            if _lane_right < 4 {
 		                player_deal_dmg(global.lane[_lane_right], DMG_TYPE.CRUSH, 4)
@@ -97,8 +93,26 @@ function add_effect_to_lane(_lane, _args){
 		var _effect_type = _args[0]
 		
 		switch (_effect_type){
-			case LANE_EFFECTS.DMG:		break;
-			case LANE_EFFECTS.STATUS:	break;
+			case LANE_EFFECTS.DMG:		
+				// dmg type, dmg amount
+			    _target = global.lane[_lane]
+
+			    if (_target == noone) {
+					attack_missed()
+				}else{
+					var _dmg = get_string_number(_args[2])
+					
+					if !is_string(_dmg){
+						player_deal_dmg(_target, _args[1], _dmg)
+					}
+				}
+				
+				
+			break;
+			case LANE_EFFECTS.STATUS:	
+				// status effect, status amount
+				
+			break;
 		}
 		break
 	}
@@ -121,4 +135,13 @@ function get_string_number(_formula){
 	}
 	
 	return _formula
+}
+
+
+
+function attack_missed(_lane = 0){
+	var _effect_x= (get_lane_x(_lane) / room_width) * VIEW_WIDTH
+	var _effect_y =LANE_ENEMY_Y/room_height * VIEW_HEIGHT
+	
+	popup_handler.add("Wiff!", _effect_x, _effect_y, c_white, 35)
 }

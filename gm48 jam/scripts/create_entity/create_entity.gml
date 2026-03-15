@@ -16,8 +16,10 @@ function create_entity(){
 		new_enemy = new entity(ID) 
 		
 		new_enemy.sprite_index = _stats.sprite
-		new_enemy.name = _stats.name
+		new_enemy.name = is_array(_stats.name) ? _stats.name[irandom(array_length(_stats.name) - 1)] : _stats.name
 		new_enemy.hp = _stats.hp
+		new_enemy.maxhp = _stats.hp
+		
 		new_enemy.str = _stats.str
 		new_enemy.dex = _stats.dex
 		

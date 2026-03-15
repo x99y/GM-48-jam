@@ -129,7 +129,6 @@ function player_playing_card(){
 	                        move_player(_value_to_restore, 15)
 	                    break
 	                    case LANE_EFFECTS.SHOVE_LEFT:
-						show_message("huh")
 						    if is_array(_value_to_restore) {
 								//do nothing, we missed
 							}else{
