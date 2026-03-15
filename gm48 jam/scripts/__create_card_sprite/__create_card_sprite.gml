@@ -30,7 +30,7 @@ function __create_card_sprite(_card, _sprite_index = noone, _surface = -1){
 			draw_clear_alpha(c_black, 0)
 			//draw stuff here, remember 0,0 is the top left of the *surface*
 
-			draw_sprite_ext(sCardBack, 0, _x, _y, x_scale,y_scale, 0, c_white, 1)
+			draw_sprite_ext(sCardMech, 0, _x, _y, x_scale,y_scale, 0, c_white, 1)
 
 			//draw_sprite_ext(Sprite27,0,_x,_y,1,1,0,c_white,1)
 

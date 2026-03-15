@@ -120,6 +120,8 @@
     {"id":{"name":"sfx_break1","path":"sounds/sfx_break1/sfx_break1.yy",},},
     {"id":{"name":"sBG","path":"sprites/sBG/sBG.yy",},},
     {"id":{"name":"sCardBack","path":"sprites/sCardBack/sCardBack.yy",},},
+    {"id":{"name":"sCardMech","path":"sprites/sCardMech/sCardMech.yy",},},
+    {"id":{"name":"sCardOrg","path":"sprites/sCardOrg/sCardOrg.yy",},},
     {"id":{"name":"sDexIcon","path":"sprites/sDexIcon/sDexIcon.yy",},},
     {"id":{"name":"sFinger1","path":"sprites/sFinger1/sFinger1.yy",},},
     {"id":{"name":"sFinger1Rise","path":"sprites/sFinger1Rise/sFinger1Rise.yy",},},
