@@ -44,22 +44,9 @@ function init_card_database(){
 		play_selection : 
 			[
 			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,"dec"]],
-			[SELECTION_TYPE.CONDITIONAL,is_biological,0,
-				[//yes it is
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
-				],
-				[//no it isnt
-					[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,1]]
-				]
+			[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
 			],
-			],
-			
-		play_scripts : [
-			[SELECTION_TYPE.CONDITIONAL,is_biological,0,
-			[[player_draw_card],[player_draw_card]],
-			
-			[[player_draw_card]]]
-		]
+
 	}
 	
 	
@@ -153,7 +140,156 @@ function init_card_database(){
 		play_selection : [SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
 
 	}
+card_data[11] = {
+        name : "Blast", //name
+        desc : "Hits +4 in front of you, destroys a finger.",
+        variables: ["str=player.str+4"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+              [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+            [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
+            ],
+
+    }
 	
+	card_data[12] = {
+        name : "Reckless Slash", //name
+        desc : "Hits +1. Decay +1.",
+        variables: ["str=player.str"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+            [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"str"]]
+            ],
+
+    }
+	
+	card_data[13] = {
+        name : "Vicious Bite", //name
+        desc : "Hits +2 and moves an enemy left. Decay applied to 2 fingers.",
+        variables: ["str=player.con+1"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]], 
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"con"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,LANE_EFFECTS.SHOVE_LEFT]
+            ],
+
+    }
+	
+	card_data[14] = {
+        name : "Thermal Cleave", //name
+        desc : "Hits +2. Mechanizes a finger.",
+        variables: ["str=player.spd+1"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.DESTROYED],1,EFFECTS.MECH_HEAL],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"spd"]]
+            ],
+
+    }
+	
+	card_data[15] = {
+        name : "Missile", //name
+        desc : "Hit {lob} from afar but lose a finger in the process.",
+        variables: ["lob=player.dex+4"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]]
+            ],
+
+    }
+	
+	card_data[16] = {
+        name : "Punch", //name
+        desc : "Hit in front of you. Adds decay.",
+        variables: ["lob=player.str"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]]
+            ],
+
+    }
+	
+	card_data[17] = {
+        name : "Careless Strike", //name
+        desc : "Hit 3 times for +2. Lose a finger.",
+        variables: ["lob=player.str+1"],
+        rarity : RARITY.UNCOMMON,
+
+        play_selection : 
+            [
+            [SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.BIOLOGICAL],1,EFFECTS.DESTROY],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]]
+            ],
+
+    }
+	
+	card_data[18] = {
+        name : "Right Charge", //name
+        desc : "Charge an enemy for +1, moving them right.",
+        variables: ["lob=player.str"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+            [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,LANE_EFFECTS.SHOVE_RIGHT]
+			],
+
+    }
+	
+	card_data[19] = {
+        name : "Left Charge", //name
+        desc : "Charge an enemy for +1, moving them left.",
+        variables: ["lob=player.str"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+            [SELECTION_TYPE.LANE,LANE_SELECTION.SELF,1,LANE_EFFECTS.SHOVE_LEFT]
+			],
+
+    }
+	
+	card_data[20] = {
+        name : "Plague Vector", //name
+        desc : "Hit 4 times for +1, but decay 4 fingers.",
+        variables: ["lob=player.str"],
+        rarity : RARITY.COMMON,
+
+        play_selection : 
+            [
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.LANE,LANE_SELECTION.ANY,1,[LANE_EFFECTS.DMG,DMG_TYPE.BLUNT,"lob"]],
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]],
+			[SELECTION_TYPE.FINGER,[SELECTION_FINGER_TYPE.MECHANICAL,SELECTION_FINGER_TYPE.BIOLOGICAL],1,[STATUS_EFFECT.DECAY,1]]
+			],
+
+    }
 }
 /*/
 }

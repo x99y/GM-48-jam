@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"create_entity",
   "parent":{
-    "name":"entity sprites",
-    "path":"folders/lane/entity sprites.yy",
+    "name":"entity",
+    "path":"folders/lane/entity.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"entity",
+  "%Name":"enemies_declare_intent",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"entity",
+  "name":"enemies_declare_intent",
   "parent":{
-    "name":"entity",
-    "path":"folders/lane/entity.yy",
+    "name":"help",
+    "path":"folders/player/states/help.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

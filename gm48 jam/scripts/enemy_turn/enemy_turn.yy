@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"entity",
+  "%Name":"enemy_turn",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"entity",
+  "name":"enemy_turn",
   "parent":{
-    "name":"entity",
-    "path":"folders/lane/entity.yy",
+    "name":"states",
+    "path":"folders/player/states.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

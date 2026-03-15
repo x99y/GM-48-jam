@@ -17,15 +17,11 @@ last_pos = deck_pos
 time = 0
 
 //populate the deck
-repeat(15){
+repeat(20){
 	ds_list_add(global.current_deck, variable_clone(global.base_cards[irandom_range(1,array_length(global.base_cards)-1)].card_object))	
 }
 
-repeat (4){
-	draw_card()	
-}	
 
-state = player_in_hand
 
 selected_card = noone
 
@@ -103,6 +99,10 @@ function switch_state(_state){
 			selected = 0
 		break
 
+		case next_turn:
+		
+		break
+
 		default: break;	
 	}
 	
@@ -110,3 +110,5 @@ function switch_state(_state){
 	
 }
 
+state = noone
+switch_state(first_turn)

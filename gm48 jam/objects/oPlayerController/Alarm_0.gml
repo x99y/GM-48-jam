@@ -1,0 +1,1 @@
+switch_state(player_on_board)

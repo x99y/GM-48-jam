@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__enemy_data",
   "parent":{
-    "name":"entity sprites",
-    "path":"folders/lane/entity sprites.yy",
+    "name":"entity",
+    "path":"folders/lane/entity.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

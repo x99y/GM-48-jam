@@ -30,4 +30,8 @@ function player_on_board(){
 	if _mouse_y > GUI_CARD_HIDDEN_Y - GUI_CARD_HEIGHT/2{
 		switch_state(player_in_hand)
 	}
+	
+	if keyboard_check_pressed(vk_enter){
+		switch_state(next_turn)
+	}
 }

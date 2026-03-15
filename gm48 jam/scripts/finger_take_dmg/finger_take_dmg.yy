@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"entity",
+  "%Name":"finger_take_dmg",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"entity",
+  "name":"finger_take_dmg",
   "parent":{
-    "name":"entity",
-    "path":"folders/lane/entity.yy",
+    "name":"attacks",
+    "path":"folders/lane/entity/attacks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

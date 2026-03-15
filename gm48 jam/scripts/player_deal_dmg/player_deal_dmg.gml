@@ -47,6 +47,17 @@ function player_deal_dmg(_entity, _type, _base_dmg, _casting_from = noone){
 
 
 	_entity.hp -= get_dmg
+	if _entity.hp <= 0 {
+	    // Free up the lane
+	    global.lane[_entity.lane] = noone
+    
+	    var _idx = ds_list_find_index(oBoardRenderer.enemy_list, _entity)
+	    if _idx != -1 {
+	        ds_list_delete(oBoardRenderer.enemy_list, _idx)
+	    }
+
+	    delete _entity
+	}
 	
 	var _effect_x= (_entity.x/ room_width) * VIEW_WIDTH
 	var _effect_y =(_entity.y - 30)/room_height * VIEW_HEIGHT

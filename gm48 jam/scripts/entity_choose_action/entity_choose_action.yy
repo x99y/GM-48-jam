@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"entity",
+  "%Name":"entity_choose_action",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"entity",
+  "name":"entity_choose_action",
   "parent":{
-    "name":"entity",
-    "path":"folders/lane/entity.yy",
+    "name":"attacks",
+    "path":"folders/lane/entity/attacks.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

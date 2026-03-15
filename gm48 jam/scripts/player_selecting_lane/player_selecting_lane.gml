@@ -68,7 +68,7 @@ function player_selecting_lane(args){
     
 	    var _offset = _lane_offsets[selected];
 	    var _center_x = (_offset[0] + _offset[1]) / 2
-	    var _center_y = LANE_BOT_Y - 25
+	    var _center_y = LANE_BOT_Y + 2
     
 		oPointer.base_y = _center_y;
 		oPointer.x = _center_x;

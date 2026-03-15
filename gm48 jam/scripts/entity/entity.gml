@@ -31,6 +31,7 @@ function entity(ID) constructor {
 	
 	status_effects = array_create(STATUS_EFFECT.COUNT,0)
 	
+	intent = noone
 
 	function move_and_back(_lane_to, _time_to, _bump_amount) {
 	    var _origin_x = x
@@ -86,5 +87,30 @@ function entity(ID) constructor {
 	    image_yscale = _py
 
 	    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 1)
+	}
+
+	function draw_gui(){
+	    if intent == noone { return }
+    
+	    var _label = ""
+	    var _col = c_white
+	    switch (intent.intent_type) {
+	        case INTENT_TYPE.ATTACKF: _label = "ATTACK"break
+	        case INTENT_TYPE.ATTACKS: _label = "SWEEP" break
+	        case INTENT_TYPE.MOVE:    _label = "MOVE" break
+	        case INTENT_TYPE.BUFF:    _label = "BUFF" break
+	        case INTENT_TYPE.HEAL:    _label = "HEAL" break
+	    }
+    
+		var _gx = (x / room_width) * VIEW_WIDTH
+		var _gy = ((y- sprite_get_height(sprite_index) + 8) / room_height) * VIEW_HEIGHT 
+	    
+		
+		draw_set_font(fntHandData)
+	    draw_set_halign(fa_center)
+	    draw_set_color(_col)
+	    draw_text(_gx, _gy, _label)
+	    draw_set_color(c_white)
+	    draw_set_halign(fa_left)
 	}
 }
